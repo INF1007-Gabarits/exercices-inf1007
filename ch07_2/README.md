@@ -5,7 +5,7 @@
 ## 1. Nombres de Fibonacci (nombre unique)
 ### `get_fibonacci_number`
 
-Écrivez une fonction qui calculent le nombre de Fibonacci pour un index donné (index partent à 0). La définition récursive de la suite de Fibonacci est :
+Écrivez une fonction qui calcule le nombre de Fibonacci pour un index donné (indices commencent à 0). La définition récursive de la suite de Fibonacci est :
 
 *F*<sub>0</sub> = 0 <br>
 *F*<sub>1</sub> = 1 <br>
@@ -45,23 +45,23 @@ Résultat :
 ## 3. Trier un dictionnaire par les décimales des valeurs
 ### `get_sorted_dict_by_decimals`
 
-Écrivez une fonction qui retourne un dictionnaire trié en ordre croissant de la partie décimales des valeurs. Par partie décimale, on veut dire que par exemple 0.9 est plus grand que 0.42, donc tout simplement une comparaison avec la partie entière enlevée.
+Écrivez une fonction qui retourne un dictionnaire trié en ordre croissant de la partie décimale des valeurs. Par partie décimale, on veut dire que par exemple 0.9 est plus grand que 0.42, donc tout simplement une comparaison avec la partie entière enlevée.
 
 Faites le tout sur une seule ligne en utilisant la fonction `sorted` de Python.
 
 Exemple :
 ```python
 spam = {
-	2: 2.1,
-	3: 3.3,
-	1: 1.4,
-	4: 4.2
+ 2: 2.1,
+ 3: 3.3,
+ 1: 1.4,
+ 4: 4.2
 }
 eggs = {
-	"foo": 42.6942,
-	"bar": 42.9000,
-	"qux": 69.4269,
-	"yeet": 420.1337
+ "foo": 42.6942,
+ "bar": 42.9000,
+ "qux": 69.4269,
+ "yeet": 420.1337
 }
 print(get_sorted_dict_by_decimals(spam))
 print(get_sorted_dict_by_decimals(eggs))
@@ -128,4 +128,3 @@ Lucas : [2, 1, 3, 4, 7, 11, 18, 29, 47, 76]
 Perrin : [3, 0, 2, 3, 2, 5, 5, 7, 10, 12]
 Hofstadter-Q : [1, 1, 2, 3, 3, 4, 5, 5, 6, 6]
 ```
-

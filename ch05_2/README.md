@@ -1,6 +1,6 @@
 # Exercices en vrac (chapitre 5)
 
-À moins d'indication contraires, vous devez retourner les résultats des fonctions, pas les afficher directement.
+À moins d'indication contraire, vous devez retourner les résultats des fonctions, pas les afficher directement.
 
 ## 1. Facture
 

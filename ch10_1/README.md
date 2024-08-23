@@ -8,7 +8,7 @@ Compléter les quelques exercices suivants en modifiant le code de [exercice.py]
 
 2. Créer une fonction qui convertit une liste de coordonnées cartésiennes (x, y) en coordonnées polaires (rayon, angle).
 
-3. Créer un programme qui trouve l’index de la valeur la plus proche d’un nombre fournit dans un array.
+3. Créer un programme qui trouve l’index de la valeur la plus proche d’un nombre fourni dans un array.
 
 4. Créer un graphique de ![alt text](./assets/eq1.gif) dans l’intervalle [-1, 1] avec 250 points.
 

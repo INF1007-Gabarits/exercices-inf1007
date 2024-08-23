@@ -4,7 +4,6 @@ Chapitre 11.1
 Fonctions utilitaires.
 """
 
-
 import math
 import random
 

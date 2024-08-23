@@ -34,7 +34,7 @@ Résultat :
 ## 3. Crible d'Ératosthène
 ### `generate_prime_numbers`
 
-Générez la liste des nombres premiers jusqu'à un certain nombre en suivant le crible d'Ératosthène (https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Voici l'agorithme en pseudo-code :
+Générez la liste des nombres premiers jusqu'à un certain nombre en suivant le crible d'Ératosthène (https://fr.wikipedia.org/wiki/Crible_d%27%C3%89ratosth%C3%A8ne). Voici l'agorithme en pseudo-code :
 ```
 FONCTION Eratosthène(limite)
     premiers = liste vide

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 def dissipated_power(voltage, resistance):
 	# TODO: Calculer la puissance dissipée par la résistance.
 	return 0
@@ -17,12 +16,12 @@ def average(values):
 		pass # La variable v contient une valeur de la liste.
 
 def bills(value):
-	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur.
+	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur. Il faut remplir les variables twenties, tens, fives, twos et ones avec le quantité de chaque dénomination.
 
 	return (twenties, tens, fives, twos, ones);
 
 def format_base(value, base, digit_letters):
-	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres<
+	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.
 	# `digits_letters[0]` Nous donne la lettre pour le chiffre 0, ainsi de suite.
 	result = ""
 	abs_value = abs(value)

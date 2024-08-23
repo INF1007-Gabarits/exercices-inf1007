@@ -2,7 +2,6 @@
 Chapitre 11.2
 """
 
-
 from multiprocessing import Value
 import numbers
 import copy

@@ -2,7 +2,7 @@
 
 ## Structure des dossiers
 
-Chaque exercice (ou ensemble d'exercices) est dans un dossier de la forme ch*XX*_*Y*, donc le numéro du chapitre qu'il couvre et le numéro de l'exercice. Les numéros d'exercices d'un même chapitre n'ont pas vraiment de signification. Autrement dit, l'exercice *ch07_2* n'est pas plus ou moins important que *ch07_3*, juste différent.
+Chaque exercice (ou ensemble d'exercices) est dans un dossier de la forme ch*XX*_*Y*, donc le numéro du chapitre qu'il couvre et le numéro de l'exercice. Les numéros d'exercices d'un même chapitre n'ont pas vraiment de signification. Autrement dit, l'exercice *ch07_2* n'est pas plus ou moins important que *ch07_3*, juste différent. Des fois, ils sont numérotés ainsi parce qu'ils se suivent d'une semaine à l'autre.
 
 ## Code et fichiers de chaque exercice
 

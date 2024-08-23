@@ -4,7 +4,6 @@ Chapitre 11
 Code simulant un combat.
 """
 
-
 import os
 import sys
 import select

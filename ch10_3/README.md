@@ -36,7 +36,7 @@ Si on veut le *x* qui correspond à un moment *t* (en secondes), on peut dire qu
 <!-- x(t) = 2 \pi t -->
 <img src="https://latex.codecogs.com/png.latex?\bg_white%20\large%20x(t)%20=%202%20\pi%20t">
 
-Or, on a autant de valeurs de *t* qu'on a d'échantillons. Vous devez donc utiliser le taux d'échantillonage (constante `SAMPLING_FREQ` dans le code) pour calculer le nombre d'échantillons nécessaires pour une durée donnée.
+Or, on a autant de valeurs de *t* qu'on a d'échantillons. Vous devez donc utiliser le taux d'échantillonnage (constante `SAMPLING_FREQ` dans le code) pour calculer le nombre d'échantillons nécessaires pour une durée donnée.
 
 Indices :
     [numpy.linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html),
@@ -53,7 +53,7 @@ Retournez un tableau Numpy de réels représentant une onde carrée. Voici la fo
 <!-- y(t) = \textup{sgn}(\sin(F \cdot 2 \pi t)) -->
 <img src="https://latex.codecogs.com/png.latex?%5Cbg_white%20%5Clarge%20y%28t%29%20%3D%20%5Ctextup%7Bsgn%7D%28%5Csin%28F%20%5Ccdot%202%20%5Cpi%20t%29%29">
 
-Où *t* est le temps en secondes (même concepts que dans la fonction précédente) , *sgn* représente la fonction de signe.
+Où *t* est le temps en secondes (même concept que dans la fonction précédente) , *sgn* représente la fonction de signe.
 
 Indices :
     [numpy.sign](https://numpy.org/doc/stable/reference/generated/numpy.sign.html)
@@ -89,7 +89,7 @@ On obtiendrait un signal dont la fondamentale est 440 Hz, et dont la première h
 
 ### Normalisation d'un signal (`normalize`)
 
-Normalisez un signal à une certaine amplitude. Pour ce faire, il faut trouver l'échantillon le plus haut en valeur absolue, puis calculer le coefficient à appliquer pour ammener l'échantillon maximal à la cible de normalisation. On applique ensuite ce coefficient à tout le signal.
+Normalisez un signal à une certaine amplitude. Pour ce faire, il faut trouver l'échantillon le plus haut en valeur absolue, puis calculer le coefficient à appliquer pour amener l'échantillon maximal à la cible de normalisation. On applique ensuite ce coefficient à tout le signal.
 
 Indices:
     [numpy.absolute](https://numpy.org/doc/stable/reference/generated/numpy.absolute.html)
@@ -116,13 +116,12 @@ Il est souvent très utile de visualiser et de traiter la densité des fréquenc
 
 La transformée de Fourier associe à tout signal une fonction dont la variable indépendante représente (dans notre cas) la fréquence. La variable dépendante est la magnitude (il en existe plusieurs noms), ou la densité de chacune des fréquences dans le signal.
 
-Le graphique ci-dessous est la transformée de Fourier du signal précédant :
+Le graphique ci-dessous est la transformée de Fourier du signal précédent :
 
 <img src="doc/fft_a_major.png">
 
 Une fois dans le domaine fréquentiel, on peut facilement identifier les fréquences qui composent le signal ainsi que leurs proportions. Dans ce cas, on observe les fréquences correspondantes à un accord parfait de La majeur.
 
-Avec le module de FFT (Fast Fourier Transform) de SciPy, on s'épargne les mathématiques un peu lourde et on appelle `scipy.fft.fft` en lui passant notre signal. Ceci nous donne notre axe de magnitude (on peut le normaliser). Il faut aussi construire l'axe fréquentiel qui va avec. Il y a un exemple dans les notes de cours sur l'utilisation des FFT. Il faut faire attention à la longueur des axes.
+Avec le module de FFT (Fast Fourier Transform) de SciPy, on s'épargne les mathématiques un peu lourdes et on appelle `scipy.fft.fft` en lui passant notre signal. Ceci nous donne notre axe de magnitude (on peut le normaliser). Il faut aussi construire l'axe fréquentiel qui va avec. Il y a un exemple dans les notes de cours sur l'utilisation des FFT. Il faut faire attention à la longueur des axes.
 
 Doc de SciPy : [scipy.fft.fft](https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fft.html)
-

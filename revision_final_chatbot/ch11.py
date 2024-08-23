@@ -2,7 +2,6 @@
 Exemple récapitulatif qui inclut les notions du chapitre 11 et de tous les autres.
 """
 
-
 from ch8 import *
 from ch9 import *
 from ch10 import start_bot_and_show_plot

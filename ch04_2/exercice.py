@@ -3,6 +3,7 @@
 
 import random
 
+
 def get_first_part_of_name(name):
 	return ""
 

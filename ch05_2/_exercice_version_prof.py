@@ -3,6 +3,7 @@
 
 import random
 
+
 def get_bill(name, data):
 	INDEX_NAME = 0
 	INDEX_QUANTITY = 1
@@ -35,7 +36,6 @@ def get_bill(name, data):
 	#result += "\n" + f"TOTAL      {total : >10.2f} $"
 
 	return result
-
 
 def format_number(number, num_decimal_digits):
 	# Séparer les parties entière et décimale

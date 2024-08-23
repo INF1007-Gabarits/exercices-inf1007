@@ -18,7 +18,6 @@ SAMPLE_WIDTH = SAMPLE_BITS // 16
 MAX_INT_SAMPLE_VALUE = 2**(SAMPLE_BITS-1) - 1
 
 
-
 # Un tuple contenant les signaux d'un accord parfait majeur.
 MajorChord = collections.namedtuple("MajorChord", """
 	root,

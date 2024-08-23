@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Modifier les caractères pour que les lettres minuscules se transforment en majuscule, sans utiliser la fonction upper() de Python.
+Modifier les caractères pour que les lettres minuscules se transforment en majuscule, sans utiliser la fonction `upper()` de Python.
 
 ### Exemple
 ```python

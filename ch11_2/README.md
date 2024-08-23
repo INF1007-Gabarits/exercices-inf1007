@@ -4,13 +4,13 @@ Nous allons reprendre  le jeu que nous avons fait précédemment en ajoutant d'a
 
 ## Personnages (`character.Character`)
 
-La classe a un peu changé par rapport à sa version précédente. Plutôt que d'avoir une arme, les personnages on des actions (*moves*), dont une frappe sans arme (*unarmed attack*) et deux actions quelquonques (`Character.main_move` et `Character.secondary_move`)
+La classe a un peu changé par rapport à sa version précédente. Plutôt que d'avoir une arme, les personnages ont des actions (*moves*), dont une frappe sans arme (*unarmed attack*) et deux actions quelquonques (`Character.main_move` et `Character.secondary_move`)
 
 ## Action de base (`character.Move`)
 
 `Move` est la classe de base pour toutes les actions que les personnages peuvent effectuer. Elle définie trois propriétés : son nom (`name`), son niveau minimal (`min_level`) et son utilisateur actuel (`user`).
 
-Elle possède aussi trois méthodes qui peuvent être surchagées pour obtenir un comportement spécifique
+Elle possède aussi trois méthodes qui peuvent être surchargées pour obtenir un comportement spécifique
 
 `Move.use` : Cette méthode est appelée à chaque fois qu'un personnage utilise le move. Elle est abstraite et doit être réimplémentée par les classes dérivées.
 
@@ -18,7 +18,7 @@ Elle possède aussi trois méthodes qui peuvent être surchagées pour obtenir u
 
 `Move.on_turn_begin` : Cette méthode est appelée au début de chaque tour d'un combat. Elle est appelée une fois sur tous les moves des deux personnages impliqués dans le combat, même si ce move n'a pas été utilisé. Elle est appelée avant que les personnages choisissent et effectuent leur action pour le tour.
 
-Dans un combat entre les personnages A et B, l'ordre d'appel des méthodes auraient l'air de ceci :
+Dans un combat entre les personnages A et B, l'ordre d'appel des méthodes aurait l'air de ceci :
 
 `on_combat_begins` est appelé pour tous les moves de A et de B.
 
@@ -38,7 +38,7 @@ Dans un combat entre les personnages A et B, l'ordre d'appel des méthodes aurai
 Äpik took 54 dmg
 ```
 
-On note qu'on a une méthode `compute_damage` qui fait le calcul de dommage seulement. On a une autre méthode `apply_damage` qui prend en paramètre le dommage à infliger et l'applique en retournant le message. Ces méthodes sont utilisée par `use` et peuvent surchargées.
+On note qu'on a une méthode `compute_damage` qui fait le calcul de dommage seulement. On a une autre méthode `apply_damage` qui prend en paramètre le dommage à infliger et l'applique en retournant le message. Ces méthodes sont utilisées par `use` et peuvent surchargées.
 
 
 ## Actions magiques (*spells.py*)
@@ -86,6 +86,3 @@ Gämmör used Big Sucky
 
 Enter a key to continue...
 ```
-
-
-

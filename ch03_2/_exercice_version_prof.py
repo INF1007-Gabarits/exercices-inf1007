@@ -49,6 +49,7 @@ def format_base(value, base, letters):
 		result += "-"
 	return result[::-1]
 
+
 if __name__ == "__main__":
 	print(dissipated_power(69, 420))
 	print(orthogonal((1, 1), (-1, 1)))

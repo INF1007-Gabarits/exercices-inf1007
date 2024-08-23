@@ -4,7 +4,6 @@ Chapitre 11
 Classes pour représenter un personnage.
 """
 
-
 import utils
 from abc import ABC, abstractmethod
 

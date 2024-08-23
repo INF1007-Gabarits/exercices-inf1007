@@ -2,7 +2,6 @@
 Exemple des notions du chapitre 9.
 """
 
-
 import argparse
 import sys
 from collections import namedtuple

@@ -2,7 +2,6 @@
 Exemple des notions du chapitre 7.
 """
 
-
 from chatbot import *
 from twitch_bot import *
 

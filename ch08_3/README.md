@@ -8,7 +8,7 @@ Un flux audio non compressé est donc composé d’une série d’échantillons 
 
 Pour plus d'info : [Échantillonnage PCM](https://fr.wikipedia.org/wiki/Modulation_d'impulsion_codée)
 
-## Nouveau type : Tuples avec champs nommé
+## Nouveau type : Tuples avec champs nommés
 
 Parfois on veut quelque chose qui est à mi-chemin entre un tuple et un dictionnaire, c'est-à-dire une structure de donnée séquentielle simple, mais dont les éléments sont nommés.
 
@@ -18,7 +18,7 @@ On va alors utiliser `collections.namedtuple` qui agit exactement comme un tuple
 from collections import namedtuple
 
 # On construit d'abord un nouveau type de tuple
-# en lui donnant un nom et en nommant chacun des élément du tuple.
+# en lui donnant un nom et en nommant chacun des éléments du tuple.
 Couleur = namedtuple("Couleur", "r g b a")
 # On peut maintenant créer des variables de type Couleur comme on ferait pour des tuples normaux.
 orange = Couleur(0.9, 0.65, 0.0, 1.0)

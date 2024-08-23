@@ -139,6 +139,7 @@ class TestExercice(unittest.TestCase):
 			"Mauvaises sommes."
 		)
 
+
 if __name__ == '__main__':
 	if not os.path.exists('logs'):
 		os.mkdir('logs')

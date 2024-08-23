@@ -4,13 +4,14 @@
 
 Compléter les quelques exercices suivants en modifiant le code de [exercice.py](exercice.py):
 
-1. Calculer la racine carré et le carré d'un nombre
+1. Calculer la racine carrée et le carré d'un nombre
 2. Calculer la moyenne de 3 nombres donnés
 3. Convertir en radians un angle fourni au départ en degrés, minutes, secondes
 4. Convertir en degrés, minutes, secondes un angle fourni au départ en radians
 5. Convertir en degrés Celsius une température exprimée au départ en degrés Fahrenheit et vice-versa
 
 ### À compléter
+
 Vous devez compléter les fonctions suivantes du fichier [exercice.py](exercice.py).
 
 ```python

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import math
 import copy
 import itertools
@@ -18,6 +17,7 @@ def generate_prime_numbers(limit):
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
 	return [""]
+
 
 if __name__ == "__main__":
 	print(get_maximums([[1,2,3], [6,5,4], [10,11,12], [8,9,7]]))

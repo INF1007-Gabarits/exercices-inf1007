@@ -2,7 +2,6 @@
 Un chatbot qui s'identifie et donnes des citations aléatoires.
 """
 
-
 import random
 import math
 

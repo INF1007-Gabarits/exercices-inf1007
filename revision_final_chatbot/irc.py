@@ -4,7 +4,6 @@ Wrapper for IRC protocol
 RFC: https://tools.ietf.org/html/rfc1459
 """
 
-
 import socket
 import ssl
 from dataclasses import dataclass

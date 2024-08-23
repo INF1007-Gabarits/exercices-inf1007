@@ -5,7 +5,7 @@
 ## 1. Réchauffement
 ### `check_brackets`
 
-Vérifiez les fermetures dans un texte. Les parenthèses sont un exemple de fermeture. On veut dire n'importe-quel caractère d'ouverture et de fermeture qui sont passés en 2e paramètre de la fonction sous forme d'un tuple (ou d'une liste) de la forme `("ouverture1", "fermeture1", "ouverture2", "fermeture2")`. Par exemple si on vérifie les parenthèses (`(` avec `)`) et les accolades (`{` avec `}`). On aurait le tuple `("(", ")", "{", "}")`. On retourne vrai si les fermetures sont bonnes, faux sinon.
+Vérifiez les fermetures dans un texte. Les parenthèses sont un exemple de fermeture. On veut dire n'importe quel caractère d'ouverture et de fermeture qui est passé en 2^e^ paramètre de la fonction sous forme d'un tuple (ou d'une liste) de la forme `("ouverture1", "fermeture1", "ouverture2", "fermeture2")`. Par exemple si on vérifie les parenthèses (`(` avec `)`) et les accolades (`{` avec `}`). On aurait le tuple `("(", ")", "{", "}")`. On retourne vrai si les fermetures sont bonnes, faux sinon.
 
 Exemple :
 ```python
@@ -75,7 +75,7 @@ Résultat :
 ## 4. Vérification des balises d'un HTML restreint
 ### `check_tags`
 
-Vérifiez que les balises d'un fichier de style HTML simplifié sont bien fermées. Les noms des balises sont passées en paramètre, mais sans les chevrons (donc "html", "head" par exemple). On doit enlever les commentaires, mais on ignore toutes les balises vides telles que `<br>` ou `<head/>`. On ne vérifie pas le `DOCTYPE` non plus. On s'en tient vraiment justes aux balises ouvrantes et fermantes. On retourne vrai si les fermetures sont bonnes, faux sinon.
+Vérifiez que les balises d'un fichier de style HTML simplifié sont bien fermées. Les noms des balises sont passés en paramètre, mais sans les chevrons (donc "html", "head" par exemple). On doit enlever les commentaires, mais on ignore toutes les balises vides telles que `<br>` ou `<head/>`. On ne vérifie pas le `DOCTYPE` non plus. On s'en tient vraiment justes aux balises ouvrantes et fermantes. On retourne vrai si les fermetures sont bonnes, faux sinon.
 
 Syntaxe HTML de base (pour référence) : https://www.tutorialrepublic.com/html-tutorial/html-elements.php
 
@@ -105,4 +105,3 @@ Résultat :
 ```
 True
 ```
-

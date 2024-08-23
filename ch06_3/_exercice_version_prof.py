@@ -15,22 +15,21 @@ def join_integers(numbers):
 
 # FONCTION Eratosthène(limite)
 def generate_prime_numbers(limit):
- #   premiers = liste vide
+#   premiers = liste vide
 	premiers = []
- #   nombres = liste des entiers de 2 à limite
+#   nombres = liste des entiers de 2 à limite
 	nombres = [i for i in range(2, limit+1)]
- #   TANT QUE nombres est non vide FAIRE
+#   TANT QUE nombres est non vide FAIRE
 	while len(nombres) != 0:
- #       Ajouter à premiers le premier entier de nombres
+#       Ajouter à premiers le premier entier de nombres
 		premiers.append(nombres[0])
- #       nombres = liste des entiers de nombres non multiples du premier
+#       nombres = liste des entiers de nombres non multiples du premier
 		nombres = [elem for elem in nombres if elem % nombres[0] != 0]
- #   RÉSULTAT premiers
+#   RÉSULTAT premiers
 	return premiers
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
-	return [string + str(i) for i in range(1, num_combinations+1) if excluded_multiples is None or i % excluded_multiples != 0 for string in strings]
-
+	# On remarque ici que la compréhension de liste est tellement compliqué qu'il nous faut la formater et l'indenter pour s'y retrouver.
 	return [
 		string + str(i)
 			for i in range(1, num_combinations+1)
@@ -53,6 +52,7 @@ def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
 	#		result += [string + str(i) for string in strings]
 	## Retourner le résultat
 	##return result
+
 
 if __name__ == "__main__":
 	print(get_maximums([[1,2,3], [6,5,4], [10,11,12], [8,9,7]]))

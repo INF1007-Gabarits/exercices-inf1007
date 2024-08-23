@@ -2,7 +2,6 @@
 Chatbot for Twitch
 """
 
-
 import os
 import logging
 import time

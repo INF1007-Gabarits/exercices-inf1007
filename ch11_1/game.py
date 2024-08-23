@@ -4,7 +4,6 @@ Chapitre 11.1
 Code simulant un combat.
 """
 
-
 import utils
 
 from character import Character

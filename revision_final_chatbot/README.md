@@ -22,13 +22,13 @@ Ce fichier contient des classes qui implémentent un client IRC. Vous n'avez pas
 
 ### *chatbot.py*
 
-Cette classe représente la base d'un chatbot IRC générique (pas forcement Twitch) qui permet de reconnaître des commandes (messages qui commencent par un certain caractère donné) et d'y associer des fonctions de rappel (*callback*). Vous n'avez pas à vous servir directement de la classe `Chatbot`, mais vous aurez à appeler certaines de ses méthodes à travers l'héritage de la classe `TwitchBot`. La classe `Chatbot.CommandData` sera utile dans le dernier exercice.
+Cette classe représente la base d'un chatbot IRC générique (pas forcement Twitch) qui permet de reconnaitre des commandes (messages qui commencent par un certain caractère donné) et d'y associer des fonctions de rappel (*callback*). Vous n'avez pas à vous servir directement de la classe `Chatbot`, mais vous aurez à appeler certaines de ses méthodes à travers l'héritage de la classe `TwitchBot`. La classe `Chatbot.CommandData` sera utile dans le dernier exercice.
 
 ### *twitch_bot.py*
 
 Cette classe représente un chatbot fonctionnel spécifiquement fait pour Twitch. Il se connecte en SSL (connexion sécurisée, comme HTTPS) au serveur IRC de Twitch et reconnait les commandes précédées d'un point d'exclamation, par exemple `!hello` (la convention sur Twitch). Ce chatbot enregistre tous les messages qu'il reçoit dans un fichier et peut afficher les messages en temps réel (argument `log_to_console` de `TwitchBot.__init__()`)
 
-On construit un `TwitchBot` en lui donnant un dossier dans lequel mettre les journaux. Chaque session (appel de `run()`) génère son propre fichier dont le nom est la date et l'heure de connexion. On se connecte au serveur en appelant `TwitchBot.connect_and_join()` à laquelle on donne le mot de passe (le jeton incluant le `oauth:`), le surnom (nom du compte Twitch à utiliser) et le nom de la chaîne (la chaîne Twitch dans laquelle clavarder). On part ensuite la réception et le traitement des command avec `TwitchBot.run()`.
+On construit un `TwitchBot` en lui donnant un dossier dans lequel mettre les journaux. Chaque session (appel de `run()`) génère son propre fichier dont le nom est la date et l'heure de connexion. On se connecte au serveur en appelant `TwitchBot.connect_and_join()` à laquelle on donne le mot de passe (le jeton incluant le `oauth:`), le surnom (nom du compte Twitch à utiliser) et le nom de la chaîne (la chaîne Twitch dans laquelle clavarder). On part ensuite la réception et le traitement des commandes avec `TwitchBot.run()`.
 
 Exemple:
 ```python
@@ -156,7 +156,7 @@ Encore une fois, [realpython.com](https://realpython.com/) a un [guide sur les *
 
 ### Créer une classe de chatbot qui met tout le reste ensemble
 
-Malgré nos efforts, notre code de chatbot est assez peu élégant (des callbacks en fermetures lexicales enregistrés manuellement). La classe fournie `TwitchBot`, dont on s'est servie directement jusqu'à présent, est en fait écrite pour être utilisée en héritage. On va donc en hériter dans une classe `MyBot` (fichier *my_bot.py*) et utiliser le décorateur `TwitchBot.new_command` pour enregistrer des commandes. Un exemple est donné dans la *docstring* de `TwitchBot`. Ensuite, on va utilser cette classe au lieu de `TwitchBot` pour construire notre bot dans *ch11.py*.
+Malgré nos efforts, notre code de chatbot est assez peu élégant (des callbacks en fermetures lexicales enregistrés manuellement). La classe fournie `TwitchBot`, dont on s'est servie directement jusqu'à présent, est en fait écrite pour être utilisée en héritage. On va donc en hériter dans une classe `MyBot` (fichier *my_bot.py*) et utiliser le décorateur `TwitchBot.new_command` pour enregistrer des commandes. Un exemple est donné dans la *docstring* de `TwitchBot`. Ensuite, on va utiliser cette classe au lieu de `TwitchBot` pour construire notre bot dans *ch11.py*.
 
 #### My name is...
 

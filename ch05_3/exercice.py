@@ -3,6 +3,7 @@
 
 import math
 
+
 def get_num_letters(text):
 	return 0
 

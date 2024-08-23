@@ -4,7 +4,7 @@
 
 ## Standard MIDI
 
-Dans cette série d'exercices, nous utiliserons un clavier MIDI virtuel nous permettant de produire des notes musicales et la [librairie Mido](https://mido.readthedocs.io/en/latest/) en Python. Elle ne fait pas partie de la libraire standard de Python, il faut donc l'installer (soit avec `pip` ou à travers votre IDE). Pour nos besoin, disons seulement que le standard MIDI est un système de messages permettant de savoir quelles notes du clavier sont appuyées et relâchées. La librairie Mido nous permet d'obtenir ces messages dans un code Python et d'effectuer des actions sur ceux-ci.
+Dans cette série d'exercices, nous utiliserons un clavier MIDI virtuel nous permettant de produire des notes musicales et la [librairie Mido](https://mido.readthedocs.io/en/latest/) en Python. Elle ne fait pas partie de la libraire standard de Python, il faut donc l'installer (soit avec `pip` ou à travers votre IDE). Pour nos besoins, disons seulement que le standard MIDI est un système de messages permettant de savoir quelles notes du clavier sont appuyées et relâchées. La librairie Mido nous permet d'obtenir ces messages dans un code Python et d'effectuer des actions sur ceux-ci.
 
 ## 1. Associations entre numéro MIDI et nom de notes
 ### `build_note_dictionaries`
@@ -37,7 +37,7 @@ Réb
 
 Écrivez une fonction qui retourne une fonction qui sert rappel (*callback*) et qui affiche le nom des notes qui sont jouées. On affiche seulement quand la note est appuyée, pas relâchée. On passe en paramètre à `build_print_note_name_callback` le dictionnaire d'associations de numéros MIDI à noms (le premier dictionnaire retourné par `build_note_dictionaries`).
 
-Avec la librairie Mido, on peut assigner une fonction de rappel pour traiter les messages quand ils arrivent. Les callback de messages doivent être des fonctions (ou des objets fonctionnels) qui prennent en paramètre un message MIDI. On peut obtenir le type d'un message ([documentation](https://mido.readthedocs.io/en/latest/message_types.html)) via son `.type`. Si le type est `note_on`, on peut obtenir sa vitesse (le volume de la note) via son `.velocity`. On considère qu'une note est appuyées quand on a un message de type `note_on` avec une vitesse supérieure à 0. Une note est relâchée quand on a un `note_off` ou un `note_on` avec une vitesse de 0 (certains claviers envoient un `note_on` de volume 0 au lieu d'un `note_off`).
+Avec la librairie Mido, on peut assigner une fonction de rappel pour traiter les messages quand ils arrivent. Les callbacks de messages doivent être des fonctions (ou des objets fonctionnels) qui prennent en paramètre un message MIDI. On peut obtenir le type d'un message ([documentation](https://mido.readthedocs.io/en/latest/message_types.html)) via son `.type`. Si le type est `note_on`, on peut obtenir sa vitesse (le volume de la note) via son `.velocity`. On considère qu'une note est appuyée quand on a un message de type `note_on` avec une vitesse supérieure à 0. Une note est relâchée quand on a un `note_off` ou un `note_on` avec une vitesse de 0 (certains claviers envoient un `note_on` de volume 0 au lieu d'un `note_off`).
 
 Voir exemple ci-dessous pour ouverture d'un port MIDI et enregistrement d'un callback.
 

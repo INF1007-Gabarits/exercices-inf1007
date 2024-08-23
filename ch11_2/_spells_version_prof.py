@@ -2,7 +2,6 @@
 Classes d'actions magiques
 """
 
-
 from character import *
 
 

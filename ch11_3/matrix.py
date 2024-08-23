@@ -2,7 +2,6 @@
 Chapitre 11.2
 """
 
-
 import numbers
 import copy
 
