@@ -1,7 +1,5 @@
 # Exercices en vrac (chapitre 7)
 
-Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md)
-
 À moins d'indications contraires, vous devez retourner les résultats des fonctions, pas les afficher directement. Vous devez, pour chaque exercice, choisir les paramètres appropriés.
 
 ## 1. Nombres de Fibonacci (nombre unique)

@@ -1,7 +1,4 @@
-
 # Combat de personnages dans un jeu (chapitre 11)
-
-<!-- Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md) -->
 
 Nous allons programmer une classe de personnage très simple qui permet d'effectuer des combats tour-à-tour dans un jeu.
 

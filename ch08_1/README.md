@@ -1,9 +1,4 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod-redirect-0.herokuapp.com/)
-
 # Exercices en vrac (chapitre 8)
-
-Avant de commencer, consultez les instructions à suivre dans [instructions.md](instructions.md)
-
 
 ## Objectifs
 

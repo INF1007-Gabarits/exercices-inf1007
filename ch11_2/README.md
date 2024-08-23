@@ -1,7 +1,4 @@
-
 # Magie! (chapitre 11)
-
-<!-- Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md) -->
 
 Nous allons reprendre  le jeu que nous avons fait précédemment en ajoutant d'autres sortes d'actions.
 

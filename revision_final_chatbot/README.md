@@ -1,7 +1,5 @@
 # Chatbot pour Twitch! (révision)
 
-<!-- Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md) -->
-
 Nous allons écrire un chatbot, c'est-à-dire un programme qui lit le texte dans le clavardage d'un stream Twitch et qui répond à des commandes en utilisant un compte Twitch.
 
 ## Avant tout, il faut un compte pour le chatbot

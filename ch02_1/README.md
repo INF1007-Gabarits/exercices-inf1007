@@ -1,6 +1,4 @@
-
 # Transformer une lettre minuscule en majuscule
-
 
 ## Objectif
 

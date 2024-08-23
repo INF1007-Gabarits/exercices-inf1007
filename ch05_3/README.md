@@ -1,8 +1,4 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod-redirect-0.herokuapp.com/)
-
 # Histogrammes de longueur de mots (chapitre 5)
-
-Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md)
 
 À moins d'indications contraires, vous devez retourner les résultats des fonctions, pas les afficher directement.
 
@@ -55,6 +51,7 @@ On obtient :
 Remarquez qu'on ignore la rangée 0 (qui est toujours égale à 0 et ne représente rien) et que le numéro de la rangée est aligné à droite sur exactement le bon nombre de caractères.
 
 ## 4. Histogramme à colonnes verticales
+
 ### `format_horizontal_histogram`
 
 Afficher l'histogramme, mais avec des colonnes verticales (faites avec le caractère `BLOCK_CHAR`) et sans mettre les numéros de colonnes. Il faut aussi mettre une ligne en bas de l'histogramme (caractère `LINE_CHAR`) représentant l'axe et exactement de la même longueur que la largeur de l'histogramme.

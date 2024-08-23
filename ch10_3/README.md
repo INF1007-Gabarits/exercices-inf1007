@@ -1,7 +1,5 @@
 # Manipulation de signaux audio  (chapitre 10)
 
-<!-- Avant de commencer. Consulter les instructions à suivre dans [instructions.md](instructions.md) -->
-
 Nous allons reprendre l'exemple du chapitre 8 sur les fichiers WAV, mais en manipulant les signaux audio avec numpy plutôt qu'avec des listes et *struct*.
 
 ## Structure d'un fichier WAV (rappel des exercices ch. 8)

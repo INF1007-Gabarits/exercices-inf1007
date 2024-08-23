@@ -1,8 +1,4 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod-redirect-0.herokuapp.com/)
-
 # Exercices en vrac (chapitre 7)
-
-Avant de commencer, consultez les instructions à suivre dans [instructions.md](instructions.md)
 
 ## Objectifs
 
@@ -30,5 +26,3 @@ chaîne : attgcaatggtggtacatg
 séquence : ca
 Il y a 10.53 % de "ca".
 ```
-
-
