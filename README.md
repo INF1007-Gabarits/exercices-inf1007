@@ -1,1 +1,3 @@
-# exercices-inf1007
+# Exercices et exemples INF1007
+
+Construction en cours...

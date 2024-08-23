@@ -1,0 +1,19 @@
+{
+  "guard": [
+    "I used to be an adventurer like you...",
+    "Stop right there criminal scum!",
+    "Then pay with your blood!",
+    "Why... won't... you... DIE?!"
+  ],
+  "zork": [
+    "This is an open field west of a white house, with a boarded front door.",
+    "It is pitch black, you are likely to be eaten by a grue.",
+    "The engravings translate to 'This space intentionally left blank'"
+  ],
+  "mario": [
+    "It's-a-me, Mario!",
+    "Oh no! Mamma mia!",
+    "Let's-a-go!",
+    "So long, gay Bowser!"
+  ]
+}

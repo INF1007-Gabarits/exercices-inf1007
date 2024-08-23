@@ -1,0 +1,31 @@
+{
+  "english_names": [ "C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B" ],
+  "solfeggio_names": [ "Do", "Réb", "Ré", "Mib", "Mi", "Fa", "Fa#", "Sol", "Lab", "La", "Sib", "Si" ],
+  "chords": {
+    "Do majeur": [
+      "Do3",
+      "Mi3",
+      "Sol3"
+    ],
+    "Fa majeur": [
+      "Do3",
+      "Fa3",
+      "La3"
+    ],
+    "Sol majeur": [
+      "Si2",
+      "Ré3",
+      "Sol3"
+    ],
+    "La mineur": [
+      "Do3",
+      "Mi3",
+      "La3"
+    ],
+    "Ré mineur": [
+      "Ré3",
+      "Fa3",
+      "La3"
+    ]
+  }
+}
