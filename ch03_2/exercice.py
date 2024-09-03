@@ -24,11 +24,6 @@ def cash(value):
 
 	return twenties, tens, fives, twos, ones, quarters, dimes, nickels
 
-def average(values):
-	# TODO: Calculer la moyenne des valeurs positives (on ignore les valeurs strictement négatives).
-	for v in values:
-		pass # La variable v contient une valeur de la liste.
-
 def format_base(value, base, digit_letters):
 	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.
 	# `digits_letters[0]` Nous donne la lettre pour le chiffre 0, ainsi de suite.
@@ -47,5 +42,4 @@ if __name__ == "__main__":
 	print(orthogonal((1, 1), (-1, 1)))
 	print(point_in_circle([-1, 1], [1, -1], 2))
 	print(cash(137.38))
-	print(average([1, 4, -2, 10]))
 	print(format_base(-42, 16, "0123456789ABCDEF"))

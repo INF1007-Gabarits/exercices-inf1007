@@ -18,13 +18,7 @@ Soit un cercle défini par un centre (vecteur 2D) et un rayon, ainsi qu'un point
 
 Écrire un algorithme qui calcule, à partir d'une valeur réelles, la monnaie à rendre en billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢. Depuis 2013, la pièce de une cent (la _cenne noire_) n'est plus en distribution au Canada, on doit donc arrondir au multiple de 0.05$ le plus proche (donc à la pièce de 5¢ près).
 
-## 5. Moyenne d'une liste
-
-Écrire un algorithme qui calcule la moyenne entre des valeurs positives d'une liste. Le nombre de valeurs n’est pas connu à l’avance, et il faut ignorer les valeurs négatives.
-
-Par exemple, la liste [1, 4, -2, 10] donne une moyenne de 5.
-
-## 6. Formater dans une base numérique donnée
+## 5. Formater dans une base numérique donnée
 
 Écrire un algorithme qui permet de formater un nombre donné dans une base donné en utilisant une séquence de lettres données pour représenter les chiffres. Par exemple, formater 123 en base 16 nous donne 7B, et il faut donc fournir les chiffres hexadécimaux, donc 0123456789ABCDEF.
 

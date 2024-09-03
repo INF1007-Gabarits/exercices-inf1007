@@ -129,22 +129,6 @@ class TestExercice(unittest.TestCase):
 			output,
 			"Calcul incorrect"
 		)
-	
-	def test_average(self):
-		data = [[1, 4, -2, 10],
-		        [1, 4, -1, 10, 0],
-		        [-12, -42, 1],
-		        [0xDEAD, 0xBEEF, 420, 69]]
-		expected = [5.0,
-		            3.75,
-		            1.0,
-		            26593.25]
-		output = [average(d) for d in data]
-		self.assertEqual(
-			expected,
-			output,
-			"Calcul incorrect"
-		)
 
 	def test_format_base(self):
 		digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
