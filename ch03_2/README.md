@@ -8,7 +8,7 @@ Chaque exercice est dans une fonction dans [exercice.py](exercice.py) et retourn
 
 ## 2. Vecteurs orthogonaux
 
-Écrire un algorithme qui détermine si deux vecteurs à deux dimensions sont orthogonaux ou non. Note : utiliser un produit scalaire, les opérations sur les vecteurs, dont le produit scalaire, ne sont pas des opérations élémentaires disponibles pour l'exercice. Acceptons l'hypothèse qu'un vecteur nul est orthogonal à n'importe quel autre vecteur.
+Écrire un algorithme qui détermine si deux vecteurs à deux dimensions sont orthogonaux ou non. On note que les opérations sur les vecteurs, dont le produit scalaire, ne sont pas des opérations élémentaires disponibles pour l'exercice, il faut donc les écrire nous-mêmes. Acceptons l'hypothèse qu'un vecteur nul est orthogonal à n'importe quel autre vecteur.
 
 ## 3. Moyenne d'une liste
 

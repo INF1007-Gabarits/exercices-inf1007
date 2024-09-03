@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def dissipated_power(voltage, resistance):
 	# TODO: Calculer la puissance dissipée par la résistance.
 	return 0

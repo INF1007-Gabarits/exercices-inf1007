@@ -36,7 +36,7 @@ def bills(value):
 	value %= 5
 	ones = value
 
-	return (twenties, tens, fives, ones);
+	return twenties, tens, fives, ones;
 
 def format_base(value, base, letters):
 	result = ""
