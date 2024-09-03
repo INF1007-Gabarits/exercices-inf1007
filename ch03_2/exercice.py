@@ -17,11 +17,7 @@ def point_in_circle(point, circle_center, circle_radius):
 	# TODO: Retourner vrai si le point est à l'intérieur du cercle, faux sinon.
 	# point[0] et circle_center[0] pour accéder au X
 	# point[1] et circle_center[1] pour accéder au Y
-
-	distance_x = circle_center[0] - point[0]
-	distance_y = circle_center[1] - point[1]
-	distance = math.sqrt(distance_x**2 + distance_y**2)
-	return distance <= circle_radius
+	pass
 
 def cash(value):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près. Il faut remplir les variables twenties, tens, fives, twos, ones, quarters, dimes et nickels avec le quantité de chaque dénomination.
