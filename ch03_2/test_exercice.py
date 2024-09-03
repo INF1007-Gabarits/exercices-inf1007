@@ -5,7 +5,7 @@ import os
 import sys
 import unittest
 
-from exercice import *
+from _exercice_version_prof import *
 
 
 class TestExercice(unittest.TestCase):
@@ -49,6 +49,86 @@ class TestExercice(unittest.TestCase):
 			output,
 			"Calcul incorrect"
 		)
+
+	def test_point_in_circle(self):
+		data = [
+			((0, 0), (1, 0), 2),
+			((0, 0), (1, 0), 1),
+			((0, 0), (1, 1), 1),
+			((-1, 0), (1, 0), 2),
+			((-1, 1), (1, 1), 2),
+			((-1, -1), (1, 1), 2),
+			((-1, -1), (1, 1), 3),
+		]
+		expected = [
+			True,
+			True,
+			False,
+			True,
+			True,
+			False,
+			True,
+		]
+		output = [point_in_circle(d[0], d[1], d[2]) for d in data]
+		self.assertEqual(
+			expected,
+			output,
+			"Calcul incorrect"
+		)
+
+	def test_cash(self):
+		data = [
+			0,
+			1,
+			5,
+			10,
+			20,
+			420,
+			69,
+			137,
+			0xBABE,
+			0.05,
+			0.10,
+			0.25,
+			0.15,
+			0.35,
+			0.40,
+			0.20,
+			0.50,
+			0.55,
+			0.12,
+			0.13,
+			1337.88
+		]
+		expected = [
+			(   0, 0, 0, 0, 0, 0, 0),
+			(   0, 0, 0, 1, 0, 0, 0),
+			(   0, 0, 1, 0, 0, 0, 0),
+			(   0, 1, 0, 0, 0, 0, 0),
+			(   1, 0, 0, 0, 0, 0, 0),
+			(  21, 0, 0, 0, 0, 0, 0),
+			(   3, 0, 1, 4, 0, 0, 0),
+			(   6, 1, 1, 2, 0, 0, 0),
+			(2390, 0, 1, 1, 0, 0, 0),
+			(   0, 0, 0, 0, 0, 0, 1),
+			(   0, 0, 0, 0, 0, 1, 0),
+			(   0, 0, 0, 0, 1, 0, 0),
+			(   0, 0, 0, 0, 0, 1, 1),
+			(   0, 0, 0, 0, 1, 1, 0),
+			(   0, 0, 0, 0, 1, 1, 1),
+			(   0, 0, 0, 0, 0, 2, 0),
+			(   0, 0, 0, 0, 2, 0, 0),
+			(   0, 0, 0, 0, 2, 0, 1),
+			(   0, 0, 0, 0, 0, 1, 0),
+			(   0, 0, 0, 0, 0, 1, 1),
+			(  66, 1, 1, 2, 3, 1, 1),
+		]
+		output = [cash(d) for d in data]
+		self.assertEqual(
+			expected,
+			output,
+			"Calcul incorrect"
+		)
 	
 	def test_average(self):
 		data = [[1, 4, -2, 10],
@@ -60,36 +140,6 @@ class TestExercice(unittest.TestCase):
 		            1.0,
 		            26593.25]
 		output = [average(d) for d in data]
-		self.assertEqual(
-			expected,
-			output,
-			"Calcul incorrect"
-		)
-
-	def test_bills(self):
-		data = [
-			0,
-			1,
-			5,
-			10,
-			20,
-			420,
-			69,
-			137,
-			0xBABE
-		]
-		expected = [
-			(0, 0, 0, 0),
-			(0, 0, 0, 1),
-			(0, 0, 1, 0),
-			(0, 1, 0, 0),
-			(1, 0, 0, 0),
-			(21, 0, 0, 0),
-			(3, 0, 1, 4),
-			(6, 1, 1, 2),
-			(2390, 0, 1, 1)
-		]
-		output = [bills(d) for d in data]
 		self.assertEqual(
 			expected,
 			output,

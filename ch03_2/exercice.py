@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import math
+
 
 def dissipated_power(voltage, resistance):
 	# TODO: Calculer la puissance dissipée par la résistance.
@@ -7,19 +9,29 @@ def dissipated_power(voltage, resistance):
 
 def orthogonal(v1, v2):
 	# TODO: Retourner vrai si les vecteurs sont orthogonaux, faux sinon.
-	v1[0] # Pour accéder au X
-	v1[1] # Pour accéder au Y
+	# v1[0] et v2[0] pour accéder au X
+	# v1[1] et v2[1] pour accéder au Y
 	pass
+
+def point_in_circle(point, circle_center, circle_radius):
+	# TODO: Retourner vrai si le point est à l'intérieur du cercle, faux sinon.
+	# point[0] et circle_center[0] pour accéder au X
+	# point[1] et circle_center[1] pour accéder au Y
+
+	distance_x = circle_center[0] - point[0]
+	distance_y = circle_center[1] - point[1]
+	distance = math.sqrt(distance_x**2 + distance_y**2)
+	return distance <= circle_radius
+
+def cash(value):
+	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près. Il faut remplir les variables twenties, tens, fives, twos, ones, quarters, dimes et nickels avec le quantité de chaque dénomination.
+
+	return twenties, tens, fives, twos, ones, quarters, dimes, nickels
 
 def average(values):
 	# TODO: Calculer la moyenne des valeurs positives (on ignore les valeurs strictement négatives).
 	for v in values:
 		pass # La variable v contient une valeur de la liste.
-
-def bills(value):
-	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur. Il faut remplir les variables twenties, tens, fives, twos et ones avec le quantité de chaque dénomination.
-
-	return (twenties, tens, fives, twos, ones);
 
 def format_base(value, base, digit_letters):
 	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.
@@ -37,6 +49,7 @@ def format_base(value, base, digit_letters):
 if __name__ == "__main__":
 	print(dissipated_power(69, 420))
 	print(orthogonal((1, 1), (-1, 1)))
+	print(point_in_circle([-1, 1], [1, -1], 2))
+	print(cash(137.38))
 	print(average([1, 4, -2, 10]))
-	print(bills(137))
 	print(format_base(-42, 16, "0123456789ABCDEF"))
