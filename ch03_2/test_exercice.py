@@ -5,7 +5,7 @@ import os
 import sys
 import unittest
 
-from _exercice_version_prof import *
+from exercice import *
 
 
 class TestExercice(unittest.TestCase):

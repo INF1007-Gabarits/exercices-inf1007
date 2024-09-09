@@ -20,9 +20,9 @@ def point_in_circle(point, circle_center, circle_radius):
 	pass
 
 def cash(value):
-	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près. Il faut remplir les variables twenties, tens, fives, twos, ones, quarters, dimes et nickels avec le quantité de chaque dénomination.
+	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près. Il faut remplir les variables twenties, tens, fives, ones, quarters, dimes et nickels avec le quantité de chaque dénomination.
 
-	return twenties, tens, fives, twos, ones, quarters, dimes, nickels
+	return twenties, tens, fives, ones, quarters, dimes, nickels
 
 def format_base(value, base, digit_letters):
 	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.

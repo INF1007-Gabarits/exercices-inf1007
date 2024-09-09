@@ -43,6 +43,27 @@ class TestExercice(unittest.TestCase):
 			"Phrases pas aléatoires."
 		)
 
+	def test_format_date(self):
+		values = [
+			(1970, 1, 1, 0, 0, 0),
+			(1970, 1, 1, 1, 1, 1),
+			(1970, 1, 2, 3, 4, 5.6),
+			(1970, 12, 23, 12, 42, 34.56789)
+		]
+		expected = [
+			"1970-01-01 00:00:00.000",
+			"1970-01-01 01:01:01.000",
+			"1970-01-02 03:04:05.600",
+			"1970-12-23 12:42:34.568"
+		]
+
+		output = [exercice.format_date(*v) for v in values]
+		self.assertListEqual(
+			output,
+			expected,
+			"Mauvais formatage de date."
+		)
+
 	def test_encrypt(self):
 		values = [
 			("ABC", 1),
