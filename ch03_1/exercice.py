@@ -5,34 +5,45 @@ import math
 
 
 def square_root(a: float) -> float:
-    return 0.0
+    return a**(1/2)
 
 
 def square(a: float) -> float:
-    return 0.0
+    return a**2
 
 
 def average(a: float, b: float, c: float) -> float:
-    return 0.0
+    return sum([a, b, c]) / 3
 
 
+#1 degre = 60 minutes, 1 minute = 60 secondes
 def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+    convDegToRad = math.pi/180
+    angle_mins += angle_secs/60
+    angle_degs += angle_mins/60
+    
+    #return math.radians(angle_degs)
+    return angle_degs*convDegToRad
 
 
+#1 degre = 60 minutes, 1 minute = 60 secondes
 def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+    degs = round(180/math.pi * angle_rads, 0)
+    minutes = 60 * 180/math.pi * angle_rads
+    seconds = 60 * minutes
+    
+    return degs, minutes, seconds
 
 
 def to_celsius(temperature: float) -> float:
-    return 0.0
+    return (temperature - 32)/(9/5)
 
 
-def to_farenheit(temperature: float) -> float:
-    return 0.0
+def to_farenheit(temperature: float) -> float :
+    return temperature * (9/5) + 32
 
 
-def main() -> None:
+def main() -> None :
     print(f"La racine carré de 144 est : {square_root(144)}")
 
     print(f"Le carré de 12 est : {square(12)}")
