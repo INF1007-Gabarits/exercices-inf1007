@@ -9,14 +9,15 @@ def get_first_part_of_name(name):
 		if name[i] == "-" :
 			posChar =  i
 	
-	firstName = name[:posChar].capitalize()
-		
+	firstName = name[ : posChar].capitalize()
+
 	return "Bonjour, " + firstName
 
 def get_random_sentence(animals, adjectives, fruits):
 	indexAnimals = random.randrange(len(animals))
 	indexAdjectives = random.randrange(len(adjectives))
 	indexFruits = random.randrange(len(fruits))
+	
 	sentence = "Aujourd’hui, j’ai vu un " + animals[indexAnimals] + " s’emparer d’un " + adjectives[indexAdjectives] +  " plein de " + fruits[indexFruits] + "."
 	return sentence
 
@@ -32,7 +33,7 @@ def format_date(year, month, day, hours, minutes, seconds):
 		yearStr = "0" + str(year)
 	else :
 		yearStr = str(year)
-
+	
 	if len(str(month)) == 1 :
 		monthStr = "0" + str(month)
 	else :
@@ -62,23 +63,19 @@ def encrypt(text, shift):
 	encryptedText = ""
 
 	for char in text :
-		if char == " " :
-			encryptedText += " "
+		if char.isalpha() :
+			if char.islower() :
+				encryptedText += chr((ord(char) - ord("a") + shift) % 26) # mod 26 pour rester entre 0 et 25 (A et Z)
+			elif char.isupper() :
+				encryptedText += chr((ord(char) - ord("A") + shift) % 26) # mod 26 pour rester entre 0 et 25 (A et Z)
 		else :
-			encryptedText += chr(ord(char) + shift)
+			encryptedText += char
 	
 	return encryptedText
 
-def decrypt(encrypted_text, shift):
-	decryptedText = ""
 
-	for char in encrypted_text :
-		if char == " " :
-			decryptedText += " "
-		else :
-			decryptedText += chr(ord(char) - shift)
-	
-	return decryptedText
+def decrypt(encrypted_text, shift) :
+	return encrypt(encrypted_text, -shift)
 
 
 if __name__ == "__main__":
