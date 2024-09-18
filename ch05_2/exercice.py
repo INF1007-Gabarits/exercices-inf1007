@@ -11,6 +11,14 @@ def format_bill_total(data):
 
 	return ""
 
+def format_bill_items(data):
+	INDEX_NAME = 0
+	INDEX_QUANTITY = 1
+	INDEX_PRICE = 2
+
+	return ""
+
+
 def format_number(number, num_decimal_digits):
 	return ""
 
