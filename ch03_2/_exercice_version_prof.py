@@ -28,9 +28,13 @@ def point_in_circle(point, circle_center, circle_radius):
 
 def cash(value):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$, 25¢, 10¢ et 5¢ à remettre pour représenter la valeur. Il faut arrondir à la pièce de 5¢ près.
+
+	# Partie entière (les dollars).
 	dollars = int(value)
+	# Partie décimale fois 100 (donc les cents) et arrondie au multiple de 5 le plus proche. Ça nous permet de faire le traitement des cents avec des entiers (plus simple et efficace).
 	cents = int(round(value % 1.0 * 100 / 5) * 5)
 
+	# Les dénominations pour les dollars.
 	twenties = dollars // 20
 	dollars %= 20
 	tens = dollars // 10
@@ -39,24 +43,37 @@ def cash(value):
 	dollars %= 5
 	ones = dollars
 
+	# Les dénominations pour les cents.
 	quarters = cents // 25
 	cents %= 25
 	dimes = cents // 10
 	cents %= 10
 	nickels = cents // 5
 
+	# Retourner les valeurs dans un tuple (oui on peut faire ça).
 	return twenties, tens, fives, ones, quarters, dimes, nickels;
 
 def format_base(value, base, letters):
+	# Commencer par une string vide.
 	result = ""
+	# Traiter seulement la valeur absolue pour simplifier (on ajoute de signe de négation plus tard)
 	abs_value = abs(value)
+	# Tant qu'il reste des chiffres à traiter :
 	while abs_value != 0:
+		# Extraire le prochain chiffre dans la base donnée
 		digit_value = abs_value % base
+		# Ajouter à la fin du résultat le caractère du chiffre en question.
 		result += letters[digit_value]
+		# « Tasser à droite » la valeur restante de la base donnée pour passer au prochain chiffre.
 		abs_value //= base
+	# Ajouter le signe de négation si le nombre original est négatif
 	if value < 0:
 		result += "-"
+	# À ce moment, on a la bonne string, mais à l'envers, donc on la retourne renversée.
+	# Utiliser un pas négatif dans le slicing part de la fin plutôt que du début, donc [::-1] prend la string au complet, mais en partant de la fin, donc la string renversée.
 	return result[::-1]
+
+	# Approche alternative : on aurait pu faire result = letters[digit_value] + result, puis mettre le signe de négation au début plutôt qu'à la fin de la string sans faire le renversement. Ça revient au même.
 
 
 if __name__ == "__main__":
@@ -64,4 +81,4 @@ if __name__ == "__main__":
 	print(orthogonal((1, 1), (-1, 1)))
 	print(point_in_circle([-1, 1], [1, -1], 2))
 	print(cash(137.38))
-	print(format_base(42, 16, "0123456789ABCDEF"))
+	print(format_base(-420, 16, "0123456789ABCDEF"))
