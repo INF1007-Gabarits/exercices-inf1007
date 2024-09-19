@@ -9,32 +9,54 @@ import exercice
 
 
 class TestExercice(unittest.TestCase):
-	def test_get_bill(self):
-		values = ("Äpik Gämmör", [("chaise", 1, 399.99), ("g-fuel", 3, 35.99)])
-		output = exercice.get_bill(values[0], values[1])
-		expected = "Äpik Gämmör" "\n" \
-		           "SOUS TOTAL     507.96 $" "\n" \
+	def test_format_bill_total(self):
+		values = [("chaise", 1, 399.99), ("g-fuel", 3, 35.99)]
+		output = exercice.format_bill_total(values)
+		expected = "SOUS TOTAL     507.96 $" "\n" \
 		           "TAXES           76.19 $" "\n" \
 		           "TOTAL          584.15 $"
 		self.assertEqual(
-			expected,
+			expected.strip(),
 			output.strip(),
-			"Mauvaise facture"
+			"Mauvais total de facture"
+		)
+
+	def test_format_bill_items(self):
+		values = [
+			("chaise ergonomique", 1, 399.99),
+			("g-fuel", 69, 35.99),
+			("blue screen", 2, 39.99)
+		]
+		output = exercice.format_bill_items(values)
+		expected = (
+			"chaise ergonomique     399.99 $" "\n"
+			"g-fuel                2483.31 $" "\n"
+			"blue screen             79.98 $"
+		)
+		self.assertEqual(
+			expected.strip(),
+			output.strip(),
+			"Mauvais total de facture"
 		)
 
 	def test_format_number(self):
 		values = [
 			100.1114,
 			-100.1114,
-			1000.1115
+			1000.1116,
 			-4206942.1337
 		]
-		expected = ["{:_.3f}".format(v).replace("_", " ") for v in values]
+		expected = [
+			"100.111",
+			"-100.111",
+			"1 000.112",
+			"-4 206 942.134"
+		]
 		output = [exercice.format_number(v, 3).strip() for v in values]
 
 		self.assertListEqual(
-			output,
-			expected,
+			[elem.strip() for elem in expected],
+			[elem.strip() for elem in output],
 			"Mauvais formatage"
 		)
 
@@ -63,8 +85,8 @@ class TestExercice(unittest.TestCase):
 		output = [exercice.get_triangle(v).strip() for v in values]
 		
 		self.assertListEqual(
-			output,
-			expected,
+			[elem.strip() for elem in expected],
+			[elem.strip() for elem in output],
 			"Mauvais triangle"
 		)
 

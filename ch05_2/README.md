@@ -4,22 +4,77 @@
 
 ## 1. Facture
 
-Formater une facture à partir du nom d'un client et de la liste de ses achats. La liste des achats est une liste de tuples dont les éléments sont le nom de l'article, sa quantité et son prix unitaire. La facture doit afficher le nom du client, le sous-total, le montant des taxes et le total avec taxes en supposant un taux de 15% de taxes. Les montants dans la facture doivent être écrits sous le nom du client, être alignés à droite sur 10 colonnes et avoir deux chiffres décimaux suivi d’un signe de dollar. Il faut suivre le format de l’exemple.
+On a la liste des achats fait par un client. La liste des achats est une liste de tuples dont les éléments sont le nom de l'article, sa quantité et son prix unitaire. Par exemple :
 
-Si on a comme entrée :
-```
-nom = "Äpik Gämmör"
+```python
 achats = [
-    ("chaise", 1, 399.99),
-    ("g-fuel", 69, 35.99)
+    ("chaise ergonomique", 1, 399.99),
+    ("g-fuel", 69, 35.99),
+    ("blue screen", 2, 39.99)
 ]
 ```
-La sortie de `print(get_bill(nom, achats))` devrait être :
+
+On veut formater une facture avec la liste des items et le total. On veut un formatage qui aligne les éléments avec des espaces.
+
 ```
-Äpik Gämmör
-SOUS TOTAL    2883.30 $
-TAXES          432.50 $
-TOTAL         3315.80 $
+chaise ergonomique     399.99 $
+g-fuel                2483.31 $
+blue screen             79.98 $
+- - - - - - - - - - - - - - - - -
+SOUS TOTAL    2963.28 $
+TAXES          444.49 $
+TOTAL         3407.77 $
+```
+
+### 1.1 Total avec taxes
+
+Formater la dernière partie d'une facture à partir de liste des achats d'un client. La facture doit afficher le sous-total, le montant des taxes et le total avec taxes en supposant un taux de 15% de taxes. Les montants dans la facture doivent être écrits alignés à droite sur 10 colonnes et avoir deux chiffres décimaux suivi d’un signe de dollar. Il faut suivre le format de l’exemple.
+
+Si on a comme entrée :
+```python
+achats = [
+    ("chaise ergonomique", 1, 399.99),
+    ("g-fuel", 69, 35.99),
+    ("blue screen", 2, 39.99)
+]
+```
+La sortie de `print(format_bill_total(achats))` devrait être :
+```
+SOUS TOTAL    2963.28 $
+TAXES          444.49 $
+TOTAL         3407.77 $
+```
+
+### 1.2 Liste des prix d'items
+
+Formater la liste des items avec un item par ligne. Chaque ligne a le nom de l'item puis son coût (qté × prix unit.). Le nom de l'article doit être aligné sur la longueur maximale des noms de la liste. Les montants dans la facture doivent être écrits alignés à droite sur 10 colonnes et avoir deux chiffres décimaux suivi d’un signe de dollar.
+
+Par exemple, si on a comme entrée :
+```python
+achats = [
+    ("chaise ergonomique", 1, 399.99),
+    ("g-fuel", 69, 35.99),
+    ("blue screen", 2, 39.99)
+]
+```
+La sortie de `print(format_bill_items(achats))` devrait être :
+```
+chaise ergonomique     399.99 $
+g-fuel                2483.31 $
+blue screen             79.98 $
+```
+
+Cependant, l'entrée : 
+```python
+achats = [
+    ("g-fuel", 69, 35.99),
+    ("blue screen", 2, 39.99)
+]
+```
+Nous donnerait plutôt la sortie :
+```
+g-fuel         2483.31 $
+blue screen      79.98 $
 ```
 
 ## 2. Nombre formaté
