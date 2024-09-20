@@ -19,7 +19,7 @@ La meilleure façon est de faire un fork de ce répertoire en cliquant sur l'ic�
 La seconde étape sera de cloner ce répertoire après qu'il sera forked.
 
 ## Comment synchroniser un fork et résoudre les conflits?
-Il se peut qu'au fil de la session, le répertoire upstream ou original soit modifié. Pour pouvoir y avoir accès, voici les étapes à suivre. À noter que s'il n'y a aucun conflit, ces prochaines étapes peuvent également être réalisées directement en ligne sur votre répertoire forké en utilisant le bouton ':repeat: Sync fork'.
+Il se peut qu'au fil de la session, le répertoire upstream ou original soit modifié. Pour pouvoir y avoir accès, voici les étapes à suivre. À noter que s'il n'y a aucun conflit, ces prochaines étapes peuvent également être réalisées directement en ligne sur votre répertoire forké en utilisant le bouton :repeat: 'Sync fork'.
 
 ### Étape 1 : Configurer le répertoire upstream
 
@@ -75,7 +75,7 @@ Si des conflits surviennent, Git vous avertira. Pour les résoudre :
 git merge upstream/main
 ```
 
-1. Ouvrez les fichiers en conflit sur votre IDE. Vous verrez des marqueurs de conflit comme avec les fichiers en conflit indiqués en rouge :
+1. Ouvrez les fichiers en conflit sur votre IDE. Vous verrez des marqueurs de conflit (fichiers en conflit indiqués en rouge) :
 
     ```
     <<<<<<< HEAD
@@ -110,4 +110,4 @@ Une fois la fusion terminée, poussez la branche main mise à jour vers votre fo
 ```bash
 git push origin main
 ```
-Bien joué, vous avez maintenant réussi à mettre à jour votre fork avec les nouvelles modifications ajoutées sur le répertoire original!
+Bien joué, vous avez maintenant réussi à mettre à jour votre fork avec les nouvelles modifications ajoutées sur le répertoire original! :white_check_mark:
