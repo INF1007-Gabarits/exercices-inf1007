@@ -80,5 +80,5 @@ if __name__ == "__main__" :
 	print(orthogonal((1, 1), (-1, 1)))
 	print(average([1, 4, -2, 10]))
 	print(point_in_circle([-1, 1], [1, -1], 2))
-	print(bills(137))
-	print(format_base(-42, 16, "0123456789ABCDEF"))
+	print(cash(137.38))
+	print(format_base(-420, 16, "0123456789ABCDEF"))
