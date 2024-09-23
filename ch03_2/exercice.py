@@ -62,16 +62,29 @@ def bills(value) :
 	#return (hundreds, fifties, twenties, tens, fives, twos, ones)
 
 def format_base(value, base, digit_letters):
-	# Formater un nombre dans une base donné en utilisant les lettres fournies pour les chiffres.
+	# Formater un nombre dans une base donnée en utilisant les lettres fournies pour les chiffres.
 	# `digits_letters[0]` Nous donne la lettre pour le chiffre 0, ainsi de suite.
-	result = ""
-	abs_value = abs(value)
-	while abs_value != 0 :
-		valeurChiffre = abs_value % base
+	result = "" # Ton nombre en base b
+	abs_value = abs(value) 
+	
+	while abs_value > 0 :
+		valeurChiffre = abs_value % base # Tu veux obtenir un chiffre (ou un nombre dans le cas d'une lettre) entre 0 et b 
+										 # qui sera inférieur par la même occasion à len(digit_letters). Il sera un "pointeur" dans digit_letters.
+		result = digit_letters[valeurChiffre] + result # À partir du "pointeur" obtenu précédemment, tu peux obtenir la valeur du nombre ou du chiffre dans ta base b 
+											   	       # et l'ajouter à ta chaîne de caractères. (Tu l'ajoutes après parce que ton algorithme te donne d'abord les unités, les b-aine, les b^2-aines, ect.)
+		abs_value //= 1 #base # Pour être en mesure de continuer à obtenir les autres symboles de ton nombre, tu divises par ta base.
+						   
+						   # Ex. : n = 190 et b = 16.
+						   # IT. 1 : n != 0 -> True. valeurChiffre = 190 % 16 = 14 donc tu dois chercher digit_letters[14] qui est "E".
+						   # result = "E". abs_value = 190 // 16 = 12.
+						   # IT. 2 : n != 0 -> True. valeurChiffre = 12 % 16 = 12 donc on cherche digit_letters[12] qui est "B".
+						   # result = "B" + "E" = "BE". abs_value = 12 // 16 = 0
+						   # fin tant que
+						   # Donc EB = B*16^1 + E*16^0 = 11*16 + 14*1 = 190
 		
 	if value < 0 :
 		# TODO: Ne pas oublier d'ajouter '-' devant pour les nombres négatifs.
-		result += "-"
+		result = "-" + result
 	return result
 
 
