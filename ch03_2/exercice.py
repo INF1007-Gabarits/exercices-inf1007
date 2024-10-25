@@ -72,7 +72,7 @@ def format_base(value, base, digit_letters):
 										 # qui sera inférieur par la même occasion à len(digit_letters). Il sera un "pointeur" dans digit_letters.
 		result = digit_letters[valeurChiffre] + result # À partir du "pointeur" obtenu précédemment, tu peux obtenir la valeur du nombre ou du chiffre dans ta base b 
 											   	       # et l'ajouter à ta chaîne de caractères. (Tu l'ajoutes après parce que ton algorithme te donne d'abord les unités, les b-aine, les b^2-aines, ect.)
-		abs_value //= 1 #base # Pour être en mesure de continuer à obtenir les autres symboles de ton nombre, tu divises par ta base.
+		abs_value //= base # Pour être en mesure de continuer à obtenir les autres symboles de ton nombre, tu divises par ta base.
 						   
 						   # Ex. : n = 190 et b = 16.
 						   # IT. 1 : n != 0 -> True. valeurChiffre = 190 % 16 = 14 donc tu dois chercher digit_letters[14] qui est "E".

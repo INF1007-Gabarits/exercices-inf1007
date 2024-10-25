@@ -9,7 +9,7 @@ def format_bill_total(data):
 	INDEX_QUANTITY = 1
 	INDEX_PRICE = 2
 
-	exit = name + "\n"
+	exit = "" + "\n"
 	TAX_RATE = 0.14975
 
 	sousTotal = 0
@@ -57,7 +57,7 @@ def format_number(number, num_decimal_digits):
 	
 	wholePart = formatted[ : : -1]
 
-	return wholePart + "." + fractionnaryPart
+	return str(wholePart) + "." + str(fractionnaryPart)
 
 def format_number(number, num_decimal_digits):
 	wholePart = int(abs(number))
@@ -69,17 +69,20 @@ def format_number(number, num_decimal_digits):
 		wholePart = number % 1000
 		wholePartStr = str(wholePart) + wholePartStr
 
-	return wholePart + "." + fractionnaryPart
+	return str(wholePart) + "." + str(fractionnaryPart)
 
 def get_triangle(num_rows):
-	letter = "A"
-	exit = "+" * num_rows
+	LETTER = "A"
+	exit = "+" * (2*num_rows + 1) + "\n"
 
-	for iteration in range(1, num_rows) :
-		continue
+	for n in range(0, num_rows) :
+		lettersRow = (2*n + 1) * LETTER
+		spaces = (num_rows - n - 1) * " "
+		row = "+" + spaces + lettersRow + spaces + "+\n"
+		exit += row
 
-	exit += "+" * num_rows
-	return ""
+	exit += "+" * (2*num_rows + 1)
+	return exit
 
 
 if __name__ == "__main__":
