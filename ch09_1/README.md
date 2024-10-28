@@ -1,4 +1,4 @@
-# Exercices en vrac (chapitre 10)
+# Exercices en vrac (chapitre 9)
 
 ## Objectifs
 

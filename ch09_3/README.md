@@ -1,4 +1,4 @@
-# Manipulation de signaux audio  (chapitre 10)
+# Manipulation de signaux audio  (chapitre 9)
 
 Nous allons reprendre l'exemple du chapitre 8 sur les fichiers WAV, mais en manipulant les signaux audio avec numpy plutôt qu'avec des listes et *struct*.
 
