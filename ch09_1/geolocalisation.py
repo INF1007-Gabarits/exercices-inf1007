@@ -1,12 +1,13 @@
 # Exercice tiré de https://alan-turing-institute.github.io/rsd-engineeringcourse/ch00python/010exemplar.html
 import matplotlib
-matplotlib.use('TkAgg')
+# À ajouter pour linux
+# matplotlib.use('TkAgg')
 
 import geopy
 import requests
 import matplotlib.pyplot as plt
 from io import BytesIO
-import imageio
+import imageio.v2 as imageio
 import numpy as np
 
 
@@ -57,9 +58,12 @@ def is_green(pixels):
 
 def show_green_in_png(im):
     pixels = imageio.imread(BytesIO(im))
+    print(pixels.shape)
+    print(pixels.min(), pixels.max())
     green = is_green(pixels)
 
-    out = green[:, :, np.newaxis] * np.array([0, 1, 0])[np.newaxis, np.newaxis, :]
+    # Créer l'image de couverture végétale et changer en uint8
+    out = (green[:, :, np.newaxis] * np.array([0, 255, 0])[np.newaxis, np.newaxis, :]).astype(np.uint8)
 
     buffer = BytesIO()
     result = imageio.imwrite(buffer, out, format='png')
@@ -79,30 +83,41 @@ def location_sequence(start, end, steps):
     return np.vstack([lats, longs]).transpose()
 
 
-ville = 'Montreal'  # Montreal, Quebec, Magog, Sherbrooke
+if __name__ == "__main__":
+    ville = 'Montreal'  # Montreal, Quebec, Magog, Sherbrooke
 
-geocoder = geopy.geocoders.Nominatim(user_agent="couverture-vegetale")
+    geocoder = geopy.geocoders.Nominatim(user_agent="couverture-vegetale")
 
 
-montreal_location = geolocate(geocoder, ville)
-print(f'La latitude et longitude de {ville} sont {montreal_location}')
+    montreal_location = geolocate(geocoder, ville)
+    print(f'La latitude et longitude de {ville} sont {montreal_location}')
 
-map_png = map_at(*montreal_location)
+    map_png = map_at(*montreal_location)
 
-# Calcul de la couverture végétale
-#display_image(map_png)
-#display_image(map_at(*montreal_location, satellite=False))
-#display_image(show_green_in_png(map_png))
-print(f'La couverture végétale de {ville} est {pourcentage_vegetal(map_png)} %')
-display_images([map_png, map_at(*montreal_location, satellite=False), show_green_in_png(map_png)])
+    # Calcul de la couverture végétale
+    #display_image(map_png)
+    #display_image(map_at(*montreal_location, satellite=False))
+    #display_image(show_green_in_png(map_png))
+    print(f'La couverture végétale de {ville} est {pourcentage_vegetal(map_png)} %')
+    display_images([map_png, map_at(*montreal_location, satellite=False), show_green_in_png(map_png)])
 
-# Calcul de la couverture végétale entre Montréal et Québec
-plt.figure()
-plt.subplot(1,2,1)
-plt.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Quebec"), 10)])
-plt.title('Montréal-Québec')
-plt.subplot(1,2,2)
-plt.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Sherbrooke"), 10)])
-plt.title('Montréal-Sherbrooke')
-plt.show()
+    ###############################################################################################################################################################
+    # Calcul de la couverture végétale entre Montréal et Québec et entre Montréal et Sherbrooke
+    # Création de la figure
+    # fig, (ax1, ax2) = plt.subplots(1, 2)
+
+    # # Graphique des données pour chaque trajet
+    # ax1.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Quebec"), 10)])
+    # ax1.set_title('Montréal-Québec')
+
+    # ax2.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Sherbrooke"), 10)])
+    # ax2.set_title('Montréal-Sherbrooke')
+
+    # # Ajouter un xlabel et ylabel globaux
+    # fig.supxlabel("Position entre les villes (points intermédiaires)")
+    # fig.supylabel("Pourcentage de couverture végétale (%)")
+
+    # # Afficher la figure
+    # plt.show()
+
 
