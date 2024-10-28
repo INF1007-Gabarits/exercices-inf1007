@@ -6,7 +6,7 @@ Dans cette série d'exercices, nous utiliserons un clavier MIDI comme au chapitr
 
 ## 1. Associations MIDI, notes et accords
 
-Dans les exercices du chapitre 7.2, nous avons généré un dictionnaire d'association entre des notes et des numéros MIDI, ainsi que des accords avec des notes. En réutilisant `build_note_dictionaries` du chap 7.2, nous allons maintenant charger ces éléments à partir d'un fichier JSON avec une structure particulière. Nous allons ensuite bâtir nos associations de notes MIDI grâce au contenu des dictionnaires.
+Dans les exercices du chapitre 7.3, nous avons généré un dictionnaire d'association entre des notes et des numéros MIDI, ainsi que des accords avec des notes. En réutilisant `build_note_dictionaries` du chap 7.3, nous allons maintenant charger ces éléments à partir d'un fichier JSON avec une structure particulière. Nous allons ensuite bâtir nos associations de notes MIDI grâce au contenu des dictionnaires.
 
 Au lieu d'avoir ceci dans le code:
 ```python

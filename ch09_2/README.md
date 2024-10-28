@@ -1,33 +1,21 @@
-# Exemples en classe (chapitre 9)
+# Exercices en vrac (chapitre 9)
 
-## Logging (*logging_ex.py*)
+## Objectifs
 
-Porte sur les slides 8 à 10 des notes du chapitre 9
+Compléter les quelques exercices suivants en modifiant le code de [exercice.py](exercice.py):
 
-## Exceptions (*exceptions_ex.py*)
+1. Créer un array présentant 64 valeurs uniformément réparties entre -1.3 et 2.5.
 
-Porte sur les slides 15 à 19 des notes du chapitre 9
+2. Créer une fonction qui convertit une liste de coordonnées cartésiennes (x, y) en coordonnées polaires (rayon, angle).
 
-## Tests unitaires (*tests_ex.py* et *code_to_test.py*)
+3. Créer un programme qui trouve l’index de la valeur la plus proche d’un nombre fourni dans un array.
 
-Porte sur les slides 20 à 24 des notes du chapitre 9
+4. Créer un graphique de ![alt text](./assets/eq1.gif) dans l’intervalle [-1, 1] avec 250 points.
 
-## Ligne de commande (*code_to_test.py*)
+5. Créer un programme qui estime la valeur de pi avec la méthode de Monte-Carlo. Afficher le résultat ci-bas.
 
-Porte sur la slide 51 des notes du chapitre 9
+![alt text](./assets/img.png)
 
-## Documentation
+**Rappel mathématique**: L'aire d'un quart de cercle est pi/4.
 
-Porte sur les slides 44 à 52 des notes du chapitre 9.
-
-Après avoir écrit votre documentation dans votre code, vous pouvez générer un site web léger dans lequel la lire, un peu comme la documentation de Python ou celle des différentes librairies tierces.
-
-Un des formats les plus courants ces temps-ci est le format [Sphinx](https://www.sphinx-doc.org/en/master/index.html). Pour s'en servir, on doit suivre quelques étapes :
-
-1. Installer Make avec [`apt-get install build-essential`](https://packages.ubuntu.com/xenial/build-essential) sur Ubuntu, avec [MSYS2](https://www.msys2.org/) sur Windows ou avec [Homebrew](https://brew.sh/) sur Mac.
-2. Installer sphinx avec `pip install sphinx` (probablement déjà installé).
-3. Créer un dossier *doc* ou *docs* (ou peu importe comment vous voulez l'appeler) dans votre dossier de projet. On va dire *doc* pour le reste.
-4. Dans ce dossier, faire `sphinx-quickstart --ext-autodoc` et choisir de séparer les sources.
-5. Dans doc/source/conf.py, décommenter le code de la section *Path setup*. Dans le `sys.path`, ajouter le chemin vers les modules de votre projet (dans notre cas `../../`). Le squelette fait déjà les conversions pour vous, vous n'avez qu'à changer le chemin.
-6. Pour ne pas avoir à ajouter à la main chaque fichier de votre projet, aller dans le dossier *doc* et faites `sphinx-apidoc -o source <chemin-vers-projet>`, où `<chemin-vers-projet>` est `../` dans notre cas, c'est-à-dire le chemin vers votre code Python. Faites cette étape quand vous ajoutez ou retirez des fichiers sources.
-7. Faites `make html` dans le dossier *doc* pour générer la documentation. Elle sera dans *doc/build/html* (ouvrez le fichier *index.html*)
+6. Évaluer l’intégrale ![alt text](./assets/eq2.gif). Afficher dans un graphique ![alt text](./assets/eq3.gif) pour x = [-4, 4].

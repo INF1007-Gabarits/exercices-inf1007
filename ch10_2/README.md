@@ -1,34 +1,33 @@
-# Exercice AI supplémentaire (chapitre 10)
+# Exemples en classe (chapitre 10)
 
-## Objectifs
+## Logging (*logging_ex.py*)
 
-L'exercice à compléter est un exemple simplifié d'un problème d'intelligence artificielle. Vous devrez implémenter vous-même l'exercice de bout en bout.
+Porte sur les slides 8 à 10 des notes du chapitre 10
 
-Vous disposez d'un ensemble de données (data/winequality-white.csv) qui contient plusieurs caractéristiques de vins dans le but d'en évaluer la qualité. Vous devez créer deux algorithmes d'intelligence artificielle qui prédiront la qualité d'un vin selon les caractéristiques contenues dans le fichier. Vous devez aussi évaluer vos deux algorithmes et afficher dans des graphiques séparés le résultat de la prédiction de la qualité du vin. Finalement, vous devez utiliser l'erreur moyenne absolue pour évaluer les deux modèles.
+## Exceptions (*exceptions_ex.py*)
 
-Pour vous guider dans la résolution de ce problème, voici les quelques étapes que vous devriez suivre:
-    
-1. Lire le fichier csv à l'aide de la librairie Pandas (https://pandas.pydata.org/docs/)
+Porte sur les slides 15 à 19 des notes du chapitre 10
 
-2. Séparer les attributs de l'ensemble de données (X) de la valeur cible (y). Dans l'ensemble de données fourni, l'attribut cible (y) est *quality*.
+## Tests unitaires (*tests_ex.py* et *code_to_test.py*)
 
-3. Séparer l'ensemble de données (X et y) en deux sous-ensembles. Le premier représentera l'ensemble d'entrainement (X_train, y_train) et le deuxième représentera l'ensemble de tests (X_test, y_test). Cette opération s'appelle: Train test split.
+Porte sur les slides 20 à 24 des notes du chapitre 10
 
-    **Hint**: Une méthode de la librarie scikit-learn permet de faire le train test split facilement.
+## Ligne de commande (*code_to_test.py*)
 
-4. Entrainer deux modèles d'intelligence artificielle sur votre ensemble d'entrainement (X_train, y_train). Le premier étant un modèle d'arbre de décision (Random Forest) et le deuxième une simple régression linéaire (Linear Regression). Utilisez la librairie scikit-learn.
+Porte sur la slide 51 des notes du chapitre 10
 
-    Pour Random Forest: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+## Documentation
 
-    Pour Linear Regression: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
+Porte sur les slides 44 à 52 des notes du chapitre 10.
 
-5. Évaluer les deux modèles d'intelligence artificielle sur votre ensemble de tests (X_test). Vous devriez obtenir une liste représentant vos prédictions de la qualité du vin (quality).
+Après avoir écrit votre documentation dans votre code, vous pouvez générer un site web léger dans lequel la lire, un peu comme la documentation de Python ou celle des différentes librairies tierces.
 
-6. Tracer pour chaque modèle, un graphique qui compare la prédiction faite au point précédent et la valeur réelle (y_test). Vous graphique devrait ressembler à ceci:
+Un des formats les plus courants ces temps-ci est le format [Sphinx](https://www.sphinx-doc.org/en/master/index.html). Pour s'en servir, on doit suivre quelques étapes :
 
-    ![alt text](./assets/LinearRegression.png) ![alt text](./assets/RandomForestRegressor.png)
-
-7. Évaluer l'erreur moyenne absolue (mean squared error) pour chaque modèle.
-
-    **Hint** Une méthode de la librarie scikit-learn permet de faire le mse facilement.
-
+1. Installer Make avec [`apt-get install build-essential`](https://packages.ubuntu.com/xenial/build-essential) sur Ubuntu, avec [MSYS2](https://www.msys2.org/) sur Windows ou avec [Homebrew](https://brew.sh/) sur Mac.
+2. Installer sphinx avec `pip install sphinx` (probablement déjà installé).
+3. Créer un dossier *doc* ou *docs* (ou peu importe comment vous voulez l'appeler) dans votre dossier de projet. On va dire *doc* pour le reste.
+4. Dans ce dossier, faire `sphinx-quickstart --ext-autodoc` et choisir de séparer les sources.
+5. Dans doc/source/conf.py, décommenter le code de la section *Path setup*. Dans le `sys.path`, ajouter le chemin vers les modules de votre projet (dans notre cas `../../`). Le squelette fait déjà les conversions pour vous, vous n'avez qu'à changer le chemin.
+6. Pour ne pas avoir à ajouter à la main chaque fichier de votre projet, aller dans le dossier *doc* et faites `sphinx-apidoc -o source <chemin-vers-projet>`, où `<chemin-vers-projet>` est `../` dans notre cas, c'est-à-dire le chemin vers votre code Python. Faites cette étape quand vous ajoutez ou retirez des fichiers sources.
+7. Faites `make html` dans le dossier *doc* pour générer la documentation. Elle sera dans *doc/build/html* (ouvrez le fichier *index.html*)
