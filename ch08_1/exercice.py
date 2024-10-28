@@ -62,7 +62,7 @@ def copyFile(filePath1, filePath2, copy = " "*3) :
 
 
 # Exercice 3
-def determineGrade(FPgradesPercent : str, FPfactors : str) -> list[tuple] :
+def determineGrade(FPgradesPercent : str, FPfactors : str, FPoutput = "output/gradesAlpha.txt") -> list[tuple] :
     factors = {}
     alphaGrades = []
 
@@ -73,7 +73,7 @@ def determineGrade(FPgradesPercent : str, FPfactors : str) -> list[tuple] :
         factors = json.load(fileFactors)
         print(factors)
 
-    with open("output/gradesAlpha.txt", "w", encoding = "utf-8") as newFile :
+    with open(FPoutput, "w", encoding = "utf-8") as newFile :
         for percentage in gradesPercent :
             grade = int(percentage)
             for letter, limits in factors.items() :
