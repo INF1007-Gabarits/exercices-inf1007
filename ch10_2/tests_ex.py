@@ -26,8 +26,8 @@ class FibonacciTests(unittest.TestCase):
 	def test_valid_lengths(self):
 		# Classes d'équivalences de valeurs pour length
 		#	Valides:
-		#		A: = 0
-		#		B: = 1, 2
+		#		A: 0
+		#		B: 1, 2
 		#			min: 1
 		#			max: 2
 		#		C: > 2
@@ -81,36 +81,6 @@ class FibonacciTests(unittest.TestCase):
 		for v, e in zip(values, expected_except):
 			with self.assertRaises(e):
 				fibo_series = [fibo for fibo in fibonacci_numbers(v)]
-
-	#def test_build_recursive_sequence_generator(self):
-	#	def fibo_def(last_elems):
-	#		return last_elems[-1] + last_elems[-2]
-	#	fibo = None
-	#	try:
-	#		fibo = build_recursive_sequence_generator([0, 1], fibo_def, False)
-	#	except:
-	#		self.fail("l'appel échoue")
-	#	self.assertTrue(
-	#		inspect.isgeneratorfunction(fibo),
-	#		"L'objet retourné n'est pas un générateur"
-	#	)
-	#	values = [
-	#		1,
-	#		2,
-	#		5,
-	#		10
-	#	]
-	#	expected = [
-	#		[0],
-	#		[0, 1],
-	#		[0, 1, 1, 2, 3],
-	#		[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-	#	]
-	#	output = [[fib for fib in fibo(v)] for v in values]
-	#	self.assertListEqual(
-	#		output,
-	#		expected
-	#	)
 
 
 if __name__ == '__main__':

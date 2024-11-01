@@ -1,20 +1,38 @@
 # Exemples en classe (chapitre 10)
 
-## Logging (*logging_ex.py*)
+## Journalisation (*logging_ex.py*)
 
-Porte sur les slides 8 à 10 des notes du chapitre 10
+Porte sur les slides 8 à 10 des notes du chapitre 10.
+
+On crée une configuration de journalisation où chaque exécution crée un fichier dont le nom reflète le l'heure de début d'exécution. On peut configurer un niveau minimal de gravité pour la journalisation dans la console et le fichier.
 
 ## Exceptions (*exceptions_ex.py*)
 
-Porte sur les slides 15 à 19 des notes du chapitre 10
+Porte sur les slides 15 à 19 des notes du chapitre 10.
+
+On a une fonction `read_int_from_stdin` qui peut lever une exception de type `ValueError` si ce qui entré n'est pas un nombre supérieur à 3 et `KeyboardInterrupt` si l'utilisateur entre ctrl+C. Ces exceptions sont capturées et traitées différemment dans le code principal.
 
 ## Tests unitaires (*tests_ex.py* et *code_to_test.py*)
 
-Porte sur les slides 20 à 24 des notes du chapitre 10
+Porte sur les slides 20 à 24 des notes du chapitre 10.
+
+Le code dans *tests_ex.py* effectue des tests unitaires sur la fonction `fibonacci_numbers` présente dans *code_to_test.py*. On applique ici une version un peu moins formelle des tests par classe d'équivalences où on y mélange aussi les valeurs limites et le test de branchement.
 
 ## Ligne de commande (*code_to_test.py*)
 
-Porte sur la slide 51 des notes du chapitre 10
+Porte sur la slide 51 des notes du chapitre 10.
+
+La fonction `setup_args` configure trois arguments de ligne de commande : un positionnel, une *switch* et un optionnel. On peut obtenir les explications d'usage en faisant :
+
+```bash
+./code_to_test --help
+```
+
+On pourrait appeler le code ainsi :
+
+```bash
+./code_to_test 12 --fibo-newline --mon-autre-arg "Hello, world!"
+```
 
 ## Documentation
 
