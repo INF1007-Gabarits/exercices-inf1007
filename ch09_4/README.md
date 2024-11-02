@@ -101,7 +101,7 @@ Même chose que pour les exercices du chapitre 8, mais en utilisant les fonction
 Indices:
     [numpy.round](https://numpy.org/doc/stable/reference/generated/numpy.round.html),
     [numpy.clip](https://numpy.org/doc/stable/reference/generated/numpy.clip.html),
-    [numpy.ndarray.astype](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.ndarray.astype.html),
+    [numpy.ndarray.astype](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html),
     [numpy.ndarray.tobytes](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tobytes.html),
     [Les dtype de Numpy](https://numpy.org/doc/stable/reference/arrays.dtypes.html#arrays-dtypes-constructing),
     [numpy.frombuffer](https://numpy.org/doc/stable/reference/generated/numpy.frombuffer.html)
