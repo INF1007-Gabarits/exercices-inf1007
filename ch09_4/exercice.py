@@ -28,16 +28,16 @@ MajorChord = collections.namedtuple("MajorChord", """
 """)
 
 
-def merge_channels(channels):
+def merge_channels(*channels):
 	# Équivalent de [sample for samples in zip(*channels) for sample in samples]
-	return np.dstack(channels).ravel()
+	return np.stack(channels, axis=-1).ravel()
 
 def generate_sample_time_points(duration):
 	# TODO: Générer un tableau de points temporels également espacés en seconde. On a SAMPLING_FREQ points par seconde.
 	pass
 
 def sine(freq, amplitude, duration):
-	# Générer une onde sinusoïdale à partir de la fréquence et de l'amplitude donnée, sur le temps demandé et considérant le taux d'échantillonnage.
+	# TODO: Générer une onde sinusoïdale à partir de la fréquence et de l'amplitude donnée, sur le temps demandé et considérant le taux d'échantillonnage.
 	# Formule de la valeur y d'une onde sinusoïdale à l'angle x en fonction de sa fréquence F et de son amplitude A :
 	# y = A * sin(F * x), où x est en radian.
 	# Si on veut le x qui correspond au moment t, on peut dire que 2π représente une seconde, donc x = t * 2π
@@ -73,12 +73,12 @@ def build_major_chord(root_freq, amplitude, wave_fn, duration):
 
 def convert_to_bytes(samples):
 	# TODO: Convertir les échantillons en tableau de bytes en les convertissant en entiers 16 bits.
-	# Les échantillons en entrée sont entre -1 et 1, nous voulons les mettre entre -MAX_SAMPLE_VALUE et MAX_SAMPLE_VALUE
+	# Les échantillons en entrée sont entre -1 et 1, nous voulons les mettre entre -MAX_SAMPLE_VALUE et MAX_SAMPLE_VALUE.
 	# Juste pour être certain de ne pas avoir de problème, on doit clamper les valeurs d'entrée entre -1 et 1.
 	pass
 
 def convert_to_samples(bytes):
-	# TODO: Faire l'opération inverse de convert_to_bytes, en convertissant des échantillons entier 16 bits en échantillons réels
+	# TODO: Faire l'opération inverse de convert_to_bytes, en convertissant des échantillons entiers 16 bits en échantillons réels.
 	pass
 
 def apply_fft(sig, sampling_rate):
@@ -158,7 +158,7 @@ def main():
 		writer.setsampwidth(SAMPLE_WIDTH)
 		writer.setframerate(SAMPLING_FREQ)
 		# On met les samples dans des channels séparés (la à gauche, mi à droite), et on écrit dans le fichier
-		merged = merge_channels([sine_chord.root, sine_chord.fifth])
+		merged = merge_channels(sine_chord.root, sine_chord.fifth)
 		writer.writeframes(convert_to_bytes(merged))
 
 	with wave.open("output/major_chord.wav", "wb") as writer:

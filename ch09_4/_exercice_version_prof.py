@@ -28,9 +28,9 @@ MajorChord = namedtuple("MajorChord", """
 """)
 
 
-def merge_channels(channels):
-	# Équivalent de :  [sample for samples in zip(*channels) for sample in samples]
-	return np.dstack(channels).ravel()
+def merge_channels(*channels):
+	# Équivalent de [sample for samples in zip(*channels) for sample in samples]
+	return np.stack(channels, axis=-1).ravel()
 
 def generate_sample_time_points(duration):
 	# Générer un tableau de points temporels également espacés en seconde sur la durée donnée
@@ -108,7 +108,7 @@ def convert_to_bytes(samples):
 	return sample_bytes
 
 def convert_to_samples(data_bytes):
-	# Faire l'opération inverse de convert_to_bytes, en convertissant des échantillons entier 16 bits en échantillons réels.
+	# Faire l'opération inverse de convert_to_bytes, en convertissant des échantillons entiers 16 bits en échantillons réels.
 	# 1. Convertir en numpy array du bon type (entier 16 bit signés).
 	int_samples = np.frombuffer(data_bytes, dtype="<i2")
 	# 2. Convertir en réel dans [-1, 1]
@@ -194,7 +194,7 @@ def main():
 		writer.setsampwidth(SAMPLE_WIDTH)
 		writer.setframerate(SAMPLING_FREQ)
 		# On met les samples dans des channels séparés (la à gauche, mi à droite), et on écrit dans le fichier
-		merged = merge_channels([sine_chord.root, sine_chord.fifth])
+		merged = merge_channels(sine_chord.root, sine_chord.fifth)
 		writer.writeframes(convert_to_bytes(merged))
 
 	with wave.open("output/major_chord.wav", "wb") as writer:
