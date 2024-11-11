@@ -92,7 +92,7 @@ Le fichier `exercice.py` implémente une fonction `manage_playlist` qui simule l
 2. Affiche la playlist initiale.
 3. Trie les chansons selon une clé donnée.
 4. Affiche la playlist triée.
-5. Exporte la playlist triée dans un fichier JSON.
+5. Exporte la playlist triée dans un fichier JSON dans un nouveau dossier nommé `libraries`.
 
 ### Exemple d'utilisation de `manage_playlist` :
 
@@ -136,23 +136,32 @@ if __name__ == "__main__":
 
 Sortie console :
 ```vbnet
+Initialisation des chansons...
+
 Playlist avant tri :
+
 Playlist: My Favorites
 1. Blinding Lights by The Weeknd - 3:20 (Pop)
 2. Shape of You by Ed Sheeran - 4:00 (Pop)
 3. Bohemian Rhapsody by Queen - 6:00 (Rock)
 4. Hotel California by Eagles - 6:30 (Rock)
 5. Take Five by Dave Brubeck - 5:24 (Jazz)
+Total duration: 25 min 14 sec
 
-Playlist triée par duration :
+Tri des chansons par la clé nommée duration...
+
 Playlist: My Favorites
 1. Blinding Lights by The Weeknd - 3:20 (Pop)
 2. Shape of You by Ed Sheeran - 4:00 (Pop)
 3. Take Five by Dave Brubeck - 5:24 (Jazz)
 4. Bohemian Rhapsody by Queen - 6:00 (Rock)
 5. Hotel California by Eagles - 6:30 (Rock)
+Total duration: 25 min 14 sec
+Répertoire 'libraries' créé.
 
-Playlist exportée dans le fichier : sorted_playlist.json
+Exportation de la playlist triée vers le fichier : libraries\sorted_playlist.json ...
+Playlist exportée avec succès dans : libraries\sorted_playlist.json
+Exportation réussie au chemin : (votre chemin absolu)\sorted_playlist.json
 ```
 
 ---
