@@ -35,7 +35,6 @@ def format_bill_items(data):
 
 	return ""
 
-
 def format_number(number, num_decimal_digits):
 	posPoint = 0
 	numberStr = str(abs(number))

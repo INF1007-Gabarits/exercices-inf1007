@@ -29,7 +29,7 @@ def generate_prime_numbers(limit):
 	return premiers
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
-	# On remarque ici que la compréhension de liste est tellement compliqué qu'il nous faut la formater et l'indenter pour s'y retrouver.
+	# On remarque ici que la compréhension de liste est tellement compliquée qu'il nous faut la formater et l'indenter pour s'y retrouver.
 	return [
 		string + str(i)
 			for i in range(1, num_combinations+1)
@@ -37,7 +37,7 @@ def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
 				for string in strings
 	]
 
-	# Approche par boucle classiques
+	# Approche par boucles classiques
 	#result = []
 	# Pour chaque entier dans la liste de nombre
 	#for i in range(1, num_combinations+1):
