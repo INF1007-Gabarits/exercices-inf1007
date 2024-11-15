@@ -12,7 +12,7 @@ def minimisation(f, x0, k=0.01, n=5000):
     x_courant = x0
     while iteration_nb < n:
         x_pre = x_courant
-        gradient = f(x_courant+0.1) - f(x_courant)
+        gradient = (f(x_courant+0.1) - f(x_courant))/0.1
         x_courant = x_courant - k * gradient
         iteration_nb += 1
     return x_courant

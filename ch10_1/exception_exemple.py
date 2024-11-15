@@ -1,18 +1,18 @@
 def division(numerateur, denominateur):
-    try:
+    try :
         resultat = numerateur / denominateur
         raise NameError("Mauvais nom!!!!!")
 
-    except Exception as e:
+    except Exception as e :
         print(e)
         resultat = None
-    except NameError as e:
+    except NameError as e :
         print("La variable numerateur ou denominateur n'a pas été définie.", e)
         resultat = None
-    except TypeError:
+    except TypeError :
         print("Type incompatible avec la division.")
         resultat = None
-    except ZeroDivisionError:
+    except ZeroDivisionError :
         print("La variable denominateur est égale à 0.")
         resultat = 0
 
