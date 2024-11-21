@@ -41,6 +41,7 @@ class FibonacciTests(unittest.TestCase):
 		#			min: -∞ (pas testé)
 		#		E: pas un int
 		#			valeur limite: None
+		#			valeur limite: 4.0
 		#			échantillon: "henlo"
 
 		values = [
@@ -69,11 +70,13 @@ class FibonacciTests(unittest.TestCase):
 			-1,
 			-5,
 			None,
-			"henlo"
+			"henlo",
+			4.0,
 		]
 		expected_except = [
 			ValueError,
 			ValueError,
+			TypeError,
 			TypeError,
 			TypeError
 		]

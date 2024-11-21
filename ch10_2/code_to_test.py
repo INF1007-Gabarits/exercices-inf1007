@@ -6,6 +6,7 @@ from typing import Iterator
 from math import sqrt
 import argparse
 import numbers
+import sys
 
 
 def is_prime(num) -> bool:
@@ -41,7 +42,7 @@ def fibonacci_numbers(length) -> Iterator[int]:
 
 	:raises ValueError: Si la longueur est négative.
 
-	:param length: Longueur de la suite à générer (doit être un entier >= 0).
+	:param length: Longueur de la suite à générer (doit être un entier ≥ 0).
 	"""
 
 	if not isinstance(length, numbers.Integral):
@@ -94,6 +95,7 @@ def main():
 
 	print("--- Command-line arg ---")
 	# L'objet retourné par parse_args a des attributs dont les noms correspondent au nom de l'argument de ligne de commande.
+	print("sys.argv:         ", sys.argv)
 	print("num_fibo_numbers: ", args.num_fibo_numbers)
 	print("fibo_newline:     ", args.fibo_newline)
 	print("mon_autre_arg:    ", args.mon_autre_arg)
