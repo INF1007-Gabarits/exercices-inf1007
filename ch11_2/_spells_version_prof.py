@@ -62,7 +62,7 @@ class IntensifyingMove(SimpleDamagingMove):
 	def on_turn_begin(self):
 		# On ajoute bonus_increment au bonus actuel.
 		self.current_bonus += self.bonus_increment
-		return f"{self.user.name}'s {self.name} has {self.current_bonus}"
+		return f"{self.user.name}'s {self.name} now has bonus of {self.current_bonus}"
 
 	def compute_damage(self, opponent):
 		# On calcule le dommage en réutilisant la version de base, puis on lui ajoute le bonus.
@@ -83,9 +83,9 @@ class HealingMove(Move):
 	"""
 
 	def __init__(self, name, healing_factor, num_turns, min_level):
-		# On réutilise le __init__ de Move.
+		# Appeler l'initialisateur de Move.
 		super().__init__(name, min_level)
-		# On initialise les attributs 
+		# Initialiser les attributs.
 		self.healing_factor = healing_factor
 		self.num_turns = num_turns
 		self.remaining_active_turns = 0

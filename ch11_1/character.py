@@ -19,8 +19,11 @@ class Weapon:
 	UNARMED_POWER = 20
 	
 	# TODO: __init__
+	#       En Python et dans le modèle de documentation Sphinx, on met les paramètres du __init__ dans le docstring de la classe.
 	
 	# TODO: Propriétés
+	
+	# TODO: is_usable_by
 
 	# TODO: use
 	def use(self, user, opponent):
