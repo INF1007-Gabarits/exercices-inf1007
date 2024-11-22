@@ -1,7 +1,7 @@
-game module
-===========
+matrix module
+=============
 
-.. automodule:: game
+.. automodule:: matrix
    :members:
    :undoc-members:
    :show-inheritance:

@@ -7,7 +7,7 @@ import unittest
 from unittest import mock
 import inspect
 
-from _matrix_version_prof import *
+from matrix import *
 
 
 class TestMatrix(unittest.TestCase):

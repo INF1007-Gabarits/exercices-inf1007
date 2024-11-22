@@ -15,7 +15,7 @@ class Move(ABC):
 	:param name:      Le nom de l'action.
 	:param min_level: Le niveau minimal pour l'utiliser.
 	
-	:ivar user: L'utilisateur actuel de l'action. Peut être utiliser dans les méthodes (self.user) pour accéder au personnage qui utilise cette action
+	:ivar user: L'utilisateur actuel de l'action. Peut être utilisé dans les méthodes (self.user) pour accéder au personnage qui utilise cette action
 	"""
 	
 	def __init__(self, name, min_level):
@@ -71,19 +71,25 @@ class SimpleDamagingMove(Move):
 		self.power = power
 
 	def use(self, opponent):
+		# Calculer la quantité de dommage et l'occurence d'un coup critique.
 		damage, crit = self.compute_damage(opponent)
+		# Appliquer le dommage au personnage et retourné le message généré.
 		msg = self.apply_damage(opponent, damage, crit)
 		return msg
 
 	def apply_damage(self, opponent, damage, crit):
+		# Soustraire le dommage au hp du personnage.
 		opponent.hp -= damage
 		msg = "  "
+		# Indiquer un coup critique.
+		# Formater un message qui indique un coup critique (si applicable) et le dommage appliqué.
 		if crit:
 			msg += "Critical hit! "
 		msg += f"{opponent.name} took {damage} dmg"
 		return msg
 
 	def compute_damage(self, opponent):
+		# Appliquer la formule donnée.
 		return utils.compute_std_damage_output(
 			self.user.level,
 			self.power,
@@ -114,6 +120,7 @@ class Character:
 		self.attack = attack
 		self.defense = defense
 		self.level = level
+		# Les trois moves sont dans une liste, où le premier élément est toujours l'attaque à main nue ('Unarmed').
 		self.__moves = [SimpleDamagingMove.make_unarmed(), None, None]
 		self.unarmed_attack.user = self
 		self.hp = max_hp
@@ -129,6 +136,7 @@ class Character:
 	@max_hp.setter
 	def max_hp(self, value):
 		self.__max_hp = value
+		# Assurer que le HP reste borné entre 0 et le nouveau max HP. On réutilise le setter de hp qui fait déjà cette vérification.
 		self.hp = self.hp
 
 	@property
@@ -137,6 +145,7 @@ class Character:
 
 	@hp.setter
 	def hp(self, val):
+		# Assurer que le HP reste borné entre 0 et le max HP.
 		self.__hp = round(utils.clamp(val, 0, self.max_hp))
 
 	@property
@@ -148,7 +157,7 @@ class Character:
 		return self.__moves[1]
 
 	@main_move.setter
-	def main_move(self, value):
+	def main_move(self, value: Move):
 		self._set_move(1, value)
 		
 	@property
@@ -156,33 +165,42 @@ class Character:
 		return self.__moves[2]
 
 	@secondary_move.setter
-	def secondary_move(self, value):
+	def secondary_move(self, value: Move):
 		self._set_move(2, value)
 
 	@property
 	def moves(self):
+		# Permettre l'accès à la liste des trois moves, mais seulement en lecture seule (donc un tuple).
 		return tuple(self.__moves)
 
 	def use_move(self, index, opponent):
+		# Vérification de l'index.
 		if index not in (0, 1, 2):
 			raise IndexError(index)
-		
+
+		# Si le move demandé est nul (None), on ne fait rien et retourne un message l'indiquant.
 		if self.__moves[index] is None:
 			return f"{self.name} just stares blankly"
+		# Message décrivant ce qui ce passe.
 		msg = f"{self.name} used {self.__moves[index].name}\n"
+		# Utiliser le move sur l'adversaire.
 		use_msg = self.__moves[index].use(opponent)
-		msg += self._format_use_msg(use_msg)
+		# Nettoyer et retourner le message.
+		msg += Character._format_use_msg(use_msg)
 		return msg
 
 	def _set_move(self, index, value):
+		# Vérifier la validité de l'index. L'attaque non-armée ne peut pas être remplacée.
 		if index not in (1, 2):
 			raise IndexError(index)
-		
+
+		# Vérification de l'utilisabilité du move.
 		if value is not None and not value.is_usable_by(self):
 			raise ValueError(f"{value.name} is not usable by {self.name}")
+		# Affecter le move et mettre à jour son utilisateur.
 		self.__moves[index] = value
 		self.__moves[index].user = self
-	
+
 	@staticmethod
 	def _format_use_msg(use_msg):
 		return "  " + use_msg.strip().replace("\n", "\n  ")

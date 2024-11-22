@@ -14,14 +14,17 @@ def setup_logging(logs_dir, con_level, file_level=logging.DEBUG):
 	# Construire le chemin du fichier selon la date et l'heure actuelle.
 	filename = os.path.join(
 		logs_dir,
-		time.strftime("%Y-%m-%d_%H-%M-%S.log", time.localtime())
+		time.strftime("%Y%m%d_%H%M%S.log", time.localtime())
 	)
 	# Créer le gestionnaire qui écrit dans le fichier avec le nom ci-dessus.
 	file_handler = logging.FileHandler(filename)
 	file_handler.setLevel(file_level)
 
 	# Configurer le format de chaque entrée dans le journal. On veut la date et l'heure du message, son niveau et le message lui-même.
-	log_fmt = logging.Formatter(fmt="[%(asctime)s][%(levelname)-8s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+	log_fmt = logging.Formatter(
+		fmt="[%(asctime)s][%(levelname)-8s] %(message)s",
+		datefmt="%Y-%m-%d %H:%M:%S"
+	)
 	con_handler.setFormatter(log_fmt)
 	file_handler.setFormatter(log_fmt)
 

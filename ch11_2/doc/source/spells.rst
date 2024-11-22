@@ -1,7 +1,7 @@
-utils module
-============
+spells module
+=============
 
-.. automodule:: utils
+.. automodule:: spells
    :members:
    :undoc-members:
    :show-inheritance:

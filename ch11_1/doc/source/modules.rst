@@ -1,10 +1,9 @@
-c02-ch11-1-exercices
-====================
+ch11_1
+======
 
 .. toctree::
    :maxdepth: 4
 
-   characters
-   exercice
-   test_exercice
+   character
+   game
    utils

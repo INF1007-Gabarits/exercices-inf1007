@@ -1,5 +1,5 @@
-Welcome to Les Vraies Affaires's documentation!
-===============================================
+Welcome to Personnages et moves's documentation!
+================================================
 
 .. toctree::
    :maxdepth: 2

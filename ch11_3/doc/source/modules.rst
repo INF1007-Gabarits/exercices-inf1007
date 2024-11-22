@@ -1,10 +1,7 @@
-c02-ch11-1-exercices
-====================
+ch11_3
+======
 
 .. toctree::
    :maxdepth: 4
 
-   characters
-   exercice
-   test_exercice
-   utils
+   matrix

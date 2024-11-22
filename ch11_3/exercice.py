@@ -1,5 +1,5 @@
 """
-Chapitre 11.2
+Chapitre 11: Surcharge d'opérateurs
 """
 
 import math

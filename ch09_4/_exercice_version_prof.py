@@ -138,7 +138,8 @@ def apply_fft(sig, sampling_rate):
 	#         - Même taille que l'axe de fréquence, donc on prend juste la première moitié des valeurs retournées par `scipy.fft.fft`, c'est-à-dire la partie réelle de la FFT.
 	#         - En valeurs absolues (les valeurs négatives sont des résultats déphasés)
 	#         - On normalise en divisant par la moitié du nombre d'échantillons (taille du signal)
-	mag_axis = np.abs(sp.fft.fft(sig)[:freq_axis.size]) / (sig.size / 2)
+	real_part = sp.fft.fft(sig)[0:freq_axis.size]
+	mag_axis = np.abs(real_part) / (sig.size / 2)
 
 	# On retourne les deux axes, avec l'axe de fréquences en premier.
 	return freq_axis, mag_axis

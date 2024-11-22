@@ -15,18 +15,20 @@ from character import Character, Move
 
 
 def run_battle(c1: Character, c2: Character):
-	# Initialiser attaquant/défendeur, tour, etc.
-	attacker = c1
-	c2 = c2
+	# Initialiser nb tour.
 	num_turns = 1
-	
+
+	# Appliquer le code de début de combat pour chaque move de chaque personnage (les `on_combat_begin`).
 	for m in c1.moves + c2.moves:
 		if m is not None:
 			m.on_combat_begin()
-	
+
+	# Boucle principale du jeu.
 	while True:
+		# Début du tour : afficher l'état, appliquer les fonctions de début de tours (les `on_turn_begin`).
 		begin_turn(c1, c2)
 
+		# Exécuter le tour et afficher la mort d'un personnage si applicable.
 		dead_character = apply_turn(c1, c2)
 		if dead_character is not None:
 			print_characters(c1, c2)
@@ -34,7 +36,7 @@ def run_battle(c1: Character, c2: Character):
 			break
 		
 		num_turns += 1
-	# Retourner nombre de tours effectués
+	# Retourner nombre de tours effectués.
 	return num_turns
 
 def begin_turn(c1, c2):
@@ -95,7 +97,7 @@ def select_and_apply_action(attacker, defender):
 	print()
 	while True:
 		try:
-			print("> ", end="")
+			print("> ", end="", flush=True)
 			action_index = readkey()
 			if action_index.isalnum():
 				print(action_index)
