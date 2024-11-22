@@ -1,7 +1,7 @@
-utils module
-============
+matrix module
+=============
 
-.. automodule:: utils
+.. automodule:: matrix
    :members:
    :undoc-members:
    :show-inheritance:
