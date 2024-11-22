@@ -1,8 +1,7 @@
 """
-Chapitre 11.2
+Chapitre 11: Surcharge d'opérateurs
 """
 
-from multiprocessing import Value
 import numbers
 import copy
 
@@ -120,7 +119,7 @@ class Matrix:
 		return (self.height, self.width) == (other.height, other.width)
 
 	def _check_indexes(self, indexes):
-		if not isinstance(indexes, tuple) and len(indexes) == 2:
+		if not (isinstance(indexes, tuple) and len(indexes) == 2):
 			raise IndexError(f"{indexes} is not tuple of two elements")
 		if indexes[0] >= self.height or indexes[1] >= self.width:
 			raise IndexError(f"{indexes} is not within (height={self.height}, width={self.width})")
@@ -178,6 +177,7 @@ class Matrix:
 
 	# TODO: Multiplication scalaire avec le scalaire à gauche
 	def __rmul__(self, other):
+		# La multiplication scalaire est commutative, donc on peut réutiliser la multiplication avec le scalaire à droite.
 		return self * other
 
 	def __abs__(self):

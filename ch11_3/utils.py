@@ -1,5 +1,5 @@
 """
-Chapitre 11.1
+Chapitre 11: Surcharge d'opérateurs
 
 Fonctions utilitaires.
 """
