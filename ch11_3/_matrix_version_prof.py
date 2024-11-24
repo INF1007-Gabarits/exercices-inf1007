@@ -97,10 +97,12 @@ class Matrix:
 	def __repr__(self):
 		# TODO: une string qui représente une expression pour construire l'objet.
 		return f"Matrix({self.height}, {self.width}, {repr(self.data)})"
+		# On peut aussi utiliser type(self).__name__ pour obtenir le nom de la classe au lieu d'écrire directement 'Matrix' dans la string. 
 
 	# TODO: String formatée
 	def __format__(self, format_spec):
-		# TODO: On veut pouvoir dir comment chaque élément doit être formaté en passant la spécification de formatage qu'on passerait à `format()`
+		# TODO: On veut pouvoir dire comment chaque élément doit être formaté en passant la spécification de formatage qu'on passerait à `format()`
+		# Par exemple, 
 		lines = []
 		for i in range(self.height):
 			line = " ".join([format(self[i, j], format_spec) for j in range(self.width)])

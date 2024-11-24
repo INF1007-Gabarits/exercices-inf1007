@@ -12,7 +12,7 @@ from twitch_bot import *
 
 class VotesPlot:
 	def __init__(self, x_data, y_limit, title="Votes in the chat!"):
-		# TODO: Reproduire la construction du graphique (code du chapitre 10), mais dans des variables d'instances de l'objet courant.
+		# TODO: Reproduire la construction du graphique (code du chapitre 9), mais dans des variables d'instances de l'objet courant.
 		self.reset_bars(x_data)
 
 	def reset_bars(self, x_data):
@@ -44,6 +44,6 @@ class MyBot:
 			# Sinon, on envoie un message disant que la catégorie est inconnue (ex. "Unrecognized category 'la_catégorie'").
 		# Si aucune catégorie n'est fournie, on choisit au hasard une catégorie puis une citation (comme dans l'exemple du chapitre 8)
 		
-	# TODO: Ajouter une commande "vote" qui reproduit le comportement de la même commande de l'exemple du chapitre 10
+	# TODO: Ajouter une commande "vote" qui reproduit le comportement de la même commande de l'exemple du chapitre 9
 
 	# TODO: Ajouter une commande "start_new_vote" qui réinitialise les barres du graphique avec les valeurs en paramètre de la commande (éléments séparés d'un espace).

@@ -53,7 +53,7 @@ On veut que le chatbot réponde à la commande `!say_hi` avec un certain message
 
 Il nous faut donc créer une fonction de rappel qui envoie un message dans le chat à l'aide du bot connecté. Toutefois, on ne veut pas *hardcoder* le bot et le message directement dans la fonction. On va plutôt faire une fonction qui crée le callback à en lui passant le bot et le message. Le callback retourné est ensuite enregistré avec `register_command()`.
 
-On vous dit d'insérer votre jeton OAuth, votre nom de compte et le channel cible (le chatroom dans lequel votre chatbot va parler). C'est évidemment *chosson* pour aujourd'hui si vous voulez que votre bot soit visible à la classe. Vous pouvez aussi faire les tests sur votre propre chaine pour ne pas polluer le chatroom du cours. En dehors du cours, faites vos tests sur votre propre chaine et ne spammez pas mon chat avec vos chatbot SVP.
+On vous dit d'insérer votre jeton *OAuth*, votre nom de compte et le channel cible (le chatroom dans lequel votre chatbot va parler). C'est évidemment *chosson* pour aujourd'hui si vous voulez que votre bot soit visible à la classe. Vous pouvez aussi faire les tests sur votre propre chaine pour ne pas polluer le chatroom du cours. En dehors du cours, faites vos tests sur votre propre chaine et ne spammez pas mon chat avec vos chatbot SVP.
 
 Le code à compléter est dans *ch7.py*
 
@@ -71,25 +71,9 @@ Le code à compléter est dans *ch8.py*
 
 Dans le fichier [data/quotes.json](data/quotes.json) on a quelques citations de jeux vidéos, catégorisées selon le jeu ou le contexte. On voudrait avoir une commande `!quote` qui retourne une citation aléatoire dans celles présentes dans le fichier. On charge d'abord le fichier JSON (fonction `load_quotes()`). Ensuite, dans `build_quotes_callback()` on crée un callback qui choisit aléatoirement une catégorie, puis une citation aléatoire dans cette catégorie. Notez comment le fichier est construit, c'est-à-dire un dictionnaire dont chaque clé est une catégorie (le nom d'un jeu) et la valeur est une liste de citations.
 
-## Révision chapitre 9 (bonnes pratiques)
+## Révision chapitre 9 (bibliothèques scientifiques et graphiques)
 
-### Passer des arguments au script
-
-Dans l'exercice précédent, nous avions chargé les données à partir de fichiers, mais les noms des fichiers étaient encore écrits directement dans le code source. On peut faire mieux. En effet, nous avons vu au chapitre 9 comment passer des arguments au script quand on l'appelle. On va donc passer les noms des fichiers en paramètres au script. De cette façon, on pourrait rouler le script ainsi :
-
-```
-./ch9.py --config-file data/config.ini --quotes-file data/quotes.json
-```
-
-On roule le même code qu'au chapitre 8 (en utilisant `run_ch8_example()`) en passant les noms de fichier extraits de la ligne de commande.
-
-Le code à compléter est dans *ch9.py*
-
-Documentation de `argparse` : https://docs.python.org/3/library/argparse.html#the-add-argument-method
-
-## Révision chapitre 10 (bibliothèques scientifiques et graphiques)
-
-Nous avons vu au chapitre 10 et dans les travaux et projet comment nous servir de la librairie *matplotlib* pour afficher des graphiques. Nous allons ici afficher un histogramme des votes effectués dans le chat.
+Nous avons vu au chapitre 9 et dans les travaux et projet comment nous servir de la librairie *matplotlib* pour afficher des graphiques. Nous allons ici afficher un histogramme des votes effectués dans le chat.
 
 ### Construire un diagramme à bande
 
@@ -115,6 +99,22 @@ Documentation utile :
 `Axes.bar` : https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar <br>
 `BarContainer` : https://matplotlib.org/stable/api/container_api.html#matplotlib.container.BarContainer <br>
 `Rectangle.set_height` : https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Rectangle.html#matplotlib.patches.Rectangle.set_height
+
+## Révision chapitre 10 (bonnes pratiques)
+
+### Passer des arguments au script
+
+Dans l'exercice précédent, nous avions chargé les données à partir de fichiers, mais les noms des fichiers étaient encore écrits directement dans le code source. On peut faire mieux. En effet, nous avons vu au chapitre 10 comment passer des arguments au script quand on l'appelle. On va donc passer les noms des fichiers en paramètres au script. De cette façon, on pourrait rouler le script ainsi :
+
+```
+./ch10.py --config-file data/config.ini --quotes-file data/quotes.json
+```
+
+On roule le même code qu'au chapitre 8 (en utilisant `run_ch8_example()`) en passant les noms de fichier extraits de la ligne de commande.
+
+Le code à compléter est dans *ch10.py*
+
+Documentation de `argparse` : https://docs.python.org/3/library/argparse.html#the-add-argument-method
 
 ## Révision chapitre 11 (orientée-objet)
 
@@ -172,5 +172,5 @@ On enregistre une commande `!quote` à laquelle le bot répond en choisissant un
 
 #### Je vote pour...
 
-On reproduit le comportement de l'exemple du chapitre 10 dans une commande `!vote` sauf que le graphique lui-même (l'objet de type `VotesPlot`) est une variable d'instance de la classe `MyBot`.
+On reproduit le comportement de l'exemple du chapitre 9 dans une commande `!vote` sauf que le graphique lui-même (l'objet de type `VotesPlot`) est une variable d'instance de la classe `MyBot`.
 

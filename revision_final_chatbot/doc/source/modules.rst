@@ -1,10 +1,9 @@
-c02-ch11-1-exercices
-====================
+revision_final_chatbot
+======================
 
 .. toctree::
    :maxdepth: 4
 
-   characters
-   exercice
-   test_exercice
-   utils
+   chatbot
+   irc
+   twitch_bot

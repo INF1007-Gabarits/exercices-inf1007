@@ -1,7 +1,7 @@
-utils module
-============
+irc module
+==========
 
-.. automodule:: utils
+.. automodule:: irc
    :members:
    :undoc-members:
    :show-inheritance:

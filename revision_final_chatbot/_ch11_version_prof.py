@@ -3,8 +3,8 @@ Exemple récapitulatif qui inclut les notions du chapitre 11 et de tous les autr
 """
 
 from _ch8_version_prof import *
-from _ch9_version_prof import *
-from _ch10_version_prof import start_bot_and_show_plot
+from _ch10_version_prof import *
+from _ch9_version_prof import start_bot_and_show_plot
 from _my_bot_version_prof import MyBot, VotesPlot
 
 

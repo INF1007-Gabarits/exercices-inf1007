@@ -13,7 +13,7 @@ from twitch_bot import *
 
 class VotesPlot:
 	def __init__(self, x_data, y_limit, title="Votes in the chat!"):
-		# TODO: Reproduire la construction du graphique (code du chapitre 10), mais dans des variables d'instances de l'objet courant.
+		# TODO: Reproduire la construction du graphique (code du chapitre 9), mais dans des variables d'instances de l'objet courant.
 		self.fig, self.axes = plt.subplots()
 		self.fig.suptitle(title)
 		self.axes.set_xlabel("Possible values")
@@ -69,7 +69,7 @@ class MyBot(TwitchBot):
 			random_quote = random.choice(self.quotes[random_category])
 			self.send_privmsg(random_quote)
 
-	# TODO: Ajouter une commande "vote" qui reproduit le comportement de la même commande de l'exemple du chapitre 10
+	# TODO: Ajouter une commande "vote" qui reproduit le comportement de la même commande de l'exemple du chapitre 9
 	@TwitchBot.new_command
 	def vote(self, cmd: Chatbot.CommandData):
 		vote = cmd.params
@@ -87,7 +87,10 @@ class MyBot(TwitchBot):
 
 	# TODO: Ajouter une commande "start_new_vote" qui réinitialise les barres du graphique avec les valeurs en paramètre de la commande (éléments séparés d'un espace).
 	@TwitchBot.new_command
-	def start_new_vote(self, cmd):
-		vote_values = cmd.params.split()
-		self.votes_plot.reset_bars(vote_values)
+	def start_new_vote(self, cmd: Chatbot.CommandData):
+		try:
+			vote_values = cmd.params.split()
+			self.votes_plot.reset_bars(vote_values)
+		except:
+			self.send_privmsg("!start_new_vote requires choices")
 
