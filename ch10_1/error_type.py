@@ -1,9 +1,9 @@
-def syntax_error(some_list)
+def syntax_error(some_list) :
 
     return sorted(some_list)
 
 
-def sem_error(x, y):
+def sem_error(x, y) :
 
     return x + y
 
