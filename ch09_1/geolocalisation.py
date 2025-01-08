@@ -10,7 +10,6 @@ from io import BytesIO
 import imageio.v2 as imageio
 import numpy as np
 
-
 def geolocate(geocoder, place):
     return geocoder.geocode(place, exactly_one=False)[0][1]
 
@@ -39,7 +38,7 @@ def display_image(im):
     plt.imshow(pixels)
     plt.show()
 
-def display_images(images):
+def display_images(images) :
     nb_images = len(images)
     plt.figure()
     for i in range(nb_images):
@@ -48,7 +47,7 @@ def display_images(images):
         ax.imshow(pixels)
     plt.show()
 
-def is_green(pixels):
+def is_green(pixels) :
     threshold = 1.1
     greener_than_red = pixels[:, :, 1] > threshold * pixels[:, :, 0]
     greener_than_blue = pixels[:, :, 1] > threshold * pixels[:, :, 2]
@@ -83,11 +82,10 @@ def location_sequence(start, end, steps):
     return np.vstack([lats, longs]).transpose()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" :
     ville = 'Montreal'  # Montreal, Quebec, Magog, Sherbrooke
 
     geocoder = geopy.geocoders.Nominatim(user_agent="couverture-vegetale")
-
 
     montreal_location = geolocate(geocoder, ville)
     print(f'La latitude et longitude de {ville} sont {montreal_location}')
@@ -104,20 +102,20 @@ if __name__ == "__main__":
     ###############################################################################################################################################################
     # Calcul de la couverture végétale entre Montréal et Québec et entre Montréal et Sherbrooke
     # Création de la figure
-    # fig, (ax1, ax2) = plt.subplots(1, 2)
+    fig, (ax1, ax2) = plt.subplots(1, 2)
 
-    # # Graphique des données pour chaque trajet
-    # ax1.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Quebec"), 10)])
-    # ax1.set_title('Montréal-Québec')
+    # Graphique des données pour chaque trajet
+    ax1.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Quebec"), 10)])
+    ax1.set_title('Montréal-Québec')
 
-    # ax2.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Sherbrooke"), 10)])
-    # ax2.set_title('Montréal-Sherbrooke')
+    ax2.plot([pourcentage_vegetal(map_at(*location)) for location in location_sequence(geolocate(geocoder, "Montreal"), geolocate(geocoder, "Sherbrooke"), 10)])
+    ax2.set_title('Montréal-Sherbrooke')
 
     # # Ajouter un xlabel et ylabel globaux
-    # fig.supxlabel("Position entre les villes (points intermédiaires)")
-    # fig.supylabel("Pourcentage de couverture végétale (%)")
+    fig.supxlabel("Position entre les villes (points intermédiaires)")
+    fig.supylabel("Pourcentage de couverture végétale (%)")
 
     # # Afficher la figure
-    # plt.show()
+    plt.show()
 
 

@@ -26,7 +26,7 @@ def get_random_sentence(animals, adjectives, fruits):
 	# for word_set in (animals, adjectives, fruits):
 	# 	words += [word_set[random.randrange(0, len(word_set))]]
 
-	# Approche bin cool sur une ligne.
+	# Approche bien cool sur une ligne.
 	#words = [word_set[random.randrange(0, len(word_set))] for word_set in (animals, adjectives, fruits)]
 
 	return sentence_template % tuple(words)

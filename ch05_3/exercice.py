@@ -5,10 +5,23 @@ import math
 
 
 def get_num_letters(text):
-	return 0
+	count = 0
+	for caractere in text :
+		count += int(caractere.isalpha())
+
+	return count
 
 def get_word_length_histogram(text):
-	return [0]
+	histogram = [0]
+
+	for word in text.split(" ") :
+		length = get_num_letters(word)
+		
+		if length >= len(histogram) :
+			continue
+
+
+	return histogram
 
 def format_histogram(histogram):
 	ROW_CHAR = "*"

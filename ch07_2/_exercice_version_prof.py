@@ -40,7 +40,7 @@ def get_fibonacci_sequence(length):
 def get_sorted_dict_by_decimals(elems):
 	return dict(sorted(elems.items(), key=lambda e: e[1] % 1.0))
 
-def fibonacci_numbers(length):
+def fibonacci_numbers(length) :
 	# Valeurs initiales
 	init_values = [0, 1]
 	# Générer les valeurs initiales (et arrêter si on n'en veut pas plus)

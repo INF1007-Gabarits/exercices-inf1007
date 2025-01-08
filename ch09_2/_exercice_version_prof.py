@@ -50,10 +50,10 @@ def monte_carlo(iteration: int=5000) -> float:
     for i in range(iteration):
         x = np.random.random()
         y = np.random.random()
-        if np.sqrt(x**2 + y**2) <= 1.0:
+        if np.sqrt(x**2 + y**2) <= 1.0 :
             x_inside_dots.append(x)
             y_inside_dots.append(y)
-        else:
+        else :
             x_outside_dots.append(x)
             y_outside_dots.append(y)
 

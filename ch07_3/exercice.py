@@ -13,13 +13,20 @@ def build_note_dictionaries(note_names, add_octave_no=True):
 	midi_to_name = {}
 	name_to_midi = {}
 	# Pour chaque octave de 0 à 8 (inclus). On va générer tout l'octave 8, même si la dernière note du piano est Do 8
+	for octave in range(0, 8 + 1) :
 		# Pour chaque note de l'octave
+		for note in range(NOTES_PER_OCTAVE) :
 			# Calculer le numéro MIDI de la note et ajouter aux deux dictionnaires
-			# Ajouter le numéro de l'octave au nom de la note si add_octave_no est vrai
+			numMidi = C0_MIDI_NO + octave * NOTES_PER_OCTAVE + note
+ 			# Ajouter le numéro de l'octave au nom de la note si add_octave_no est vrai
+			fullNoteName = note + (str(octave) if add_octave_no else "")
+			midi_to_name[numMidi] = fullNoteName
 			# Garder les numéros de notes dans name_to_midi entre 0 et 11 si add_octave_no est faux
+			name_to_midi[fullNoteName] = numMidi if add_octave_no else numMidi % NOTES_PER_OCTAVE
 	return midi_to_name, name_to_midi
 
-def build_print_note_name_callback(midi_to_name):
+def build_print_note_name_callback(midi_to_name) :
+	
 	pass
 
 def build_print_chord_name_callback(chord_names_and_notes, name_to_midi):

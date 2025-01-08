@@ -2,7 +2,7 @@ import scipy.interpolate as interp
 import numpy as np
 import matplotlib.pyplot as plt
 
-f = lambda x: np.cos(x)
+f = lambda x: np.exp(np.cos(x))
 
 # Création des données initiales à partir de la fonction f avec un nombre fixe de points
 n = 10
@@ -12,7 +12,7 @@ yp = f(xp)
 # Interpolation des données xp, yp avec un plus grand nombre de points
 X = np.linspace(0, 10.0, 100)
 p1 = interp.interp1d(xp, yp)
-p3 = interp.interp1d(xp, yp, kind='cubic')
+p3 = interp.interp1d(xp, yp, kind = "cubic")
 
 # Affichage de la figure
 plt.figure(figsize=(12,6))

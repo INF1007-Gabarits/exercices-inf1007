@@ -4,17 +4,41 @@
 from collections import deque
 
 
-def get_fibonacci_number(TODO):
-	pass
+def get_fibonacci_number(index : list) :
+	return (0 if index == 0 
+		 else 1 if index == 1 
+		 else get_fibonacci_number(index - 1) + get_fibonacci_number(index - 2))
 
-def get_fibonacci_sequence(TODO):
-	pass
+def get_fibonacci_sequence(length : int) :
+	sequence = []
 
-def get_sorted_dict_by_decimals(TODO):
-	pass
+	for i in range(length) :
+		if i == 0 :
+			sequence.append(0)
+		elif i == 1 :
+			sequence.append(1)
+		else :
+			sequence.append(sequence[i - 1] + sequence[i - 2])
+	
+	return sequence
+
+def get_sorted_dict_by_decimals(elems):
+	return dict(sorted(elems.items(), key=lambda e: e[1] % 1.0))
 
 def fibonacci_numbers(length):
-	pass
+	avantDernier = 0
+	dernier = 1
+	suivant = avantDernier + dernier
+	yield avantDernier
+	yield dernier
+
+	while dernier < length :
+		#print(avantDernier, dernier)
+		suivant = avantDernier + dernier
+		yield suivant
+
+		avantDernier += 1
+		dernier += 1
 
 def build_recursive_sequence_generator(TODO):
 	pass

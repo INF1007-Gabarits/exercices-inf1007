@@ -4,7 +4,7 @@
 import math
 import sys
 sys.path.insert(1, 'D:\charge_cours\INF1007\H2021\exercices\\2021H_ch6_1_exercices')
-from exercice_ch6 import frequence
+#from exercice_ch6 import frequence
 from turtle import *
 import re
 

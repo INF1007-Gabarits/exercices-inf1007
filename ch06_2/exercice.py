@@ -6,7 +6,7 @@ from matplotlib.colors import cnames
 
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
-
+    
     return {}
 
 
@@ -23,7 +23,7 @@ def create_list() -> list:
 
 
 def compute_mse(model_dict: dict) -> dict:
-    # TODO: Calculer l'erreur quadratique moyen pour chaque modèle. Retourner un dictionnaire contenant les MSE.
+    # TODO: Calculer l'erreur quadratique moyenne pour chaque modèle. Retourner un dictionnaire contenant les MSE.
 
     return {}
 
